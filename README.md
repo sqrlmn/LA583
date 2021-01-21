@@ -2,5 +2,6 @@
 Repo: https://github.com/sqrlmn/CptS583
 ## Team members:
 ### Nghia Minh Luong nghia.luong@wsu.edu 11693938 (contact person)
-### Namgyu Han namgyu.han@wsu.edu
-### Brian James Schimert brian.schimert@wsu.edu
+### Namgyu Han namgyu.han@wsu.edu 11647029
+### Travis Cripe travis.cripe@wsu.edu 11519554
+### Brian James Schimert brian.schimert@wsu.edu 
