@@ -35,6 +35,7 @@
             this.lblAccountType = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvSearch = new System.Windows.Forms.DataGridView();
+            this.lblEditAccount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +86,7 @@
             // 
             this.lblAccountType.AutoSize = true;
             this.lblAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccountType.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblAccountType.ForeColor = System.Drawing.Color.Red;
             this.lblAccountType.Location = new System.Drawing.Point(12, 46);
             this.lblAccountType.Name = "lblAccountType";
             this.lblAccountType.Size = new System.Drawing.Size(213, 37);
@@ -115,11 +116,24 @@
             this.dgvSearch.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSearch_CellMouseClick);
             this.dgvSearch.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSearch_CellMouseDoubleClick);
             // 
+            // lblEditAccount
+            // 
+            this.lblEditAccount.AutoSize = true;
+            this.lblEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditAccount.ForeColor = System.Drawing.Color.Blue;
+            this.lblEditAccount.Location = new System.Drawing.Point(12, 83);
+            this.lblEditAccount.Name = "lblEditAccount";
+            this.lblEditAccount.Size = new System.Drawing.Size(72, 37);
+            this.lblEditAccount.TabIndex = 9;
+            this.lblEditAccount.Text = "Edit";
+            this.lblEditAccount.Click += new System.EventHandler(this.lblEditAccount_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1431, 828);
+            this.Controls.Add(this.lblEditAccount);
             this.Controls.Add(this.dgvSearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblAccountType);
@@ -145,5 +159,6 @@
         private System.Windows.Forms.Label lblAccountType;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvSearch;
+        private System.Windows.Forms.Label lblEditAccount;
     }
 }

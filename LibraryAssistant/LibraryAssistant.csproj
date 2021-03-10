@@ -149,6 +149,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccount.Designer.cs">
+      <DependentUpon>frmAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAccount.resx">
+      <DependentUpon>frmAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBook.resx">
       <DependentUpon>frmBook.cs</DependentUpon>
     </EmbeddedResource>

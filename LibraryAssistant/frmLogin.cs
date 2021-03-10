@@ -57,12 +57,14 @@ namespace LibraryAssistant
 
         private void lblRegister_Click(object sender, EventArgs e)
         {
-
+            frmRegister fRegister = new frmRegister();
+            fRegister.Show();
         }
 
         private void lblForgotPw_Click(object sender, EventArgs e)
         {
-
+            frmForgotPw fForgotPw = new frmForgotPw();
+            fForgotPw.Show();
         }
 
         //public static string GenerateSHA512String(string inputString)
