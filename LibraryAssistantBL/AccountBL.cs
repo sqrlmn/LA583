@@ -36,5 +36,26 @@ namespace LibraryAssistantBL
             bool type = accountDal.GetUserTypeDAL(username);
             return type;
         }
+
+        public string GetUserEmailBL(string username)
+        {
+            AccountDAL accountDal = new AccountDAL();
+            string email = accountDal.GetUserEmailDAL(username);
+            return email;
+        }
+
+        public string GetUserAddressBL(string username)
+        {
+            AccountDAL accountDal = new AccountDAL();
+            string address = accountDal.GetUserAddressDAL(username);
+            return address;
+        }
+
+        public string GetUserPhoneNameBL(string username)
+        {
+            AccountDAL accountDal = new AccountDAL();
+            string phone = accountDal.GetUserPhoneDAL(username);
+            return phone;
+        }
     }
 }
