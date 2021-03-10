@@ -15,13 +15,6 @@ namespace LibraryAssistant
 {
     public partial class frmLogin : Form
     {
-        //Connect to DB
-        private MySqlConnection mConnection = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-        //Send Query
-        private MySqlCommand mCommand;
-        //Read Data from DB
-        private MySqlDataReader mDataReader;
-
         public frmLogin()
         {
             InitializeComponent();
@@ -29,7 +22,7 @@ namespace LibraryAssistant
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if ((txtUsername.Text != string.Empty || txtPassword.Text != string.Empty) || (txtUsername.Text != string.Empty && txtPassword.Text != string.Empty))
+            if (txtUsername.Text != string.Empty && txtPassword.Text != string.Empty)
             {
                 AccountBL accountBl = new AccountBL();
                 bool isDone = accountBl.LoginBL(txtUsername.Text, txtPassword.Text);
@@ -37,6 +30,7 @@ namespace LibraryAssistant
                 {
                     frmMain fMain = new frmMain();
                     this.Hide();
+                    fMain.username = txtUsername.Text;
                     fMain.Show();
                     txtUsername.Clear();
                     txtPassword.Clear();
@@ -44,8 +38,6 @@ namespace LibraryAssistant
                 }
                 else
                 {
-                    //alertAdmin.ForeColor = Color.Red;
-                    //alertAdmin.Text = "Invalid email id or password...";
                     //tbAdminEmail.Clear();
                     //tbAdminPass.Clear();
                     MessageBox.Show("Invalid username or password...");
@@ -53,9 +45,7 @@ namespace LibraryAssistant
             }
             else
             {
-                //alertAdmin.ForeColor = Color.Red;
-                //alertAdmin.Text = "Enter the fields properly...";
-
+                MessageBox.Show("Enter the fields properly...");
             }
 
         }

@@ -29,5 +29,38 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
+
+        public string GetUserFirstNameDAL(string username)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("SELECT firstName FROM accounts WHERE accountId=@username", conn);
+            cmd.Parameters.Add(new MySqlParameter("@username", username));
+            conn.Open();
+            string firstName = (string)cmd.ExecuteScalar();
+            conn.Close();
+            return firstName;
+        }
+
+        public string GetUserLastNameDAL(string username)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("SELECT lastName FROM accounts WHERE accountId=@username", conn);
+            cmd.Parameters.Add(new MySqlParameter("@username", username));
+            conn.Open();
+            string lastName = (string)cmd.ExecuteScalar();
+            conn.Close();
+            return lastName;
+        }
+
+        public bool GetUserTypeDAL(string username)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("SELECT type FROM accounts WHERE accountId=@username", conn);
+            cmd.Parameters.Add(new MySqlParameter("@username", username));
+            conn.Open();
+            bool type = (bool)cmd.ExecuteScalar();
+            conn.Close();
+            return type;
+        }
     }
 }

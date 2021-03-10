@@ -15,5 +15,26 @@ namespace LibraryAssistantBL
             bool isDone = accountDal.LoginDAL(username, password);
             return isDone;
         }
+
+        public string GetUserFirstNameBL(string username)
+        {
+            AccountDAL accountDal = new AccountDAL();
+            string firstName = accountDal.GetUserFirstNameDAL(username);
+            return firstName;
+        }
+
+        public string GetUserLastNameBL(string username)
+        {
+            AccountDAL accountDal = new AccountDAL();
+            string lastName = accountDal.GetUserLastNameDAL(username);
+            return lastName;
+        }
+
+        public bool GetUserTypeBL(string username)
+        {
+            AccountDAL accountDal = new AccountDAL();
+            bool type = accountDal.GetUserTypeDAL(username);
+            return type;
+        }
     }
 }
