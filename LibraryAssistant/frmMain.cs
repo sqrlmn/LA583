@@ -55,6 +55,7 @@ namespace LibraryAssistant
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            dgvSearch.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             AccountBL accountBl = new AccountBL();
             string firstName = accountBl.GetUserFirstNameBL(username);
             string lastName = accountBl.GetUserLastNameBL(username);
@@ -72,18 +73,14 @@ namespace LibraryAssistant
 
         private void dgvSearch_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            dgvSearch.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void dgvSearch_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            dgvSearch.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void lblEditAccount_Click(object sender, EventArgs e)
         {
-            frmAccount fAccount = new frmAccount();
-            fAccount.Show();
         }
     }
 }
