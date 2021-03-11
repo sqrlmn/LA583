@@ -63,8 +63,9 @@ namespace LibraryAssistant
 
         private void lblForgotPw_Click(object sender, EventArgs e)
         {
-            frmForgotPw fForgotPw = new frmForgotPw();
-            fForgotPw.Show();
+            MessageBox.Show("Please contact Admin. This function is under development.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //frmForgotPw fForgotPw = new frmForgotPw();
+            //fForgotPw.Show();
         }
 
         //public static string GenerateSHA512String(string inputString)
