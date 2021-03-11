@@ -51,7 +51,7 @@
             // 
             this.lblUsernameL.AutoSize = true;
             this.lblUsernameL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsernameL.Location = new System.Drawing.Point(58, 174);
+            this.lblUsernameL.Location = new System.Drawing.Point(58, 158);
             this.lblUsernameL.Name = "lblUsernameL";
             this.lblUsernameL.Size = new System.Drawing.Size(172, 37);
             this.lblUsernameL.TabIndex = 0;
@@ -61,7 +61,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(58, 211);
+            this.lblUsername.Location = new System.Drawing.Point(58, 195);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(164, 37);
             this.lblUsername.TabIndex = 1;
@@ -71,7 +71,7 @@
             // 
             this.lblFullnameL.AutoSize = true;
             this.lblFullnameL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullnameL.Location = new System.Drawing.Point(58, 388);
+            this.lblFullnameL.Location = new System.Drawing.Point(58, 372);
             this.lblFullnameL.Name = "lblFullnameL";
             this.lblFullnameL.Size = new System.Drawing.Size(157, 37);
             this.lblFullnameL.TabIndex = 2;
@@ -81,7 +81,7 @@
             // 
             this.lblFullname.AutoSize = true;
             this.lblFullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullname.Location = new System.Drawing.Point(58, 425);
+            this.lblFullname.Location = new System.Drawing.Point(58, 409);
             this.lblFullname.Name = "lblFullname";
             this.lblFullname.Size = new System.Drawing.Size(149, 37);
             this.lblFullname.TabIndex = 3;
@@ -91,7 +91,7 @@
             // 
             this.lblEmailL.AutoSize = true;
             this.lblEmailL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailL.Location = new System.Drawing.Point(58, 532);
+            this.lblEmailL.Location = new System.Drawing.Point(58, 516);
             this.lblEmailL.Name = "lblEmailL";
             this.lblEmailL.Size = new System.Drawing.Size(102, 37);
             this.lblEmailL.TabIndex = 4;
@@ -101,7 +101,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(58, 569);
+            this.lblEmail.Location = new System.Drawing.Point(58, 553);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(97, 37);
             this.lblEmail.TabIndex = 5;
@@ -112,7 +112,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.Blue;
-            this.lblPassword.Location = new System.Drawing.Point(58, 318);
+            this.lblPassword.Location = new System.Drawing.Point(58, 310);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(276, 37);
             this.lblPassword.TabIndex = 7;
@@ -123,7 +123,7 @@
             // 
             this.lblPasswordL.AutoSize = true;
             this.lblPasswordL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasswordL.Location = new System.Drawing.Point(58, 281);
+            this.lblPasswordL.Location = new System.Drawing.Point(58, 265);
             this.lblPasswordL.Name = "lblPasswordL";
             this.lblPasswordL.Size = new System.Drawing.Size(166, 37);
             this.lblPasswordL.TabIndex = 6;
@@ -134,7 +134,7 @@
             this.lblEditName.AutoSize = true;
             this.lblEditName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditName.ForeColor = System.Drawing.Color.Blue;
-            this.lblEditName.Location = new System.Drawing.Point(58, 462);
+            this.lblEditName.Location = new System.Drawing.Point(58, 454);
             this.lblEditName.Name = "lblEditName";
             this.lblEditName.Size = new System.Drawing.Size(72, 37);
             this.lblEditName.TabIndex = 8;
@@ -146,7 +146,7 @@
             this.lblChangeEmail.AutoSize = true;
             this.lblChangeEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChangeEmail.ForeColor = System.Drawing.Color.Blue;
-            this.lblChangeEmail.Location = new System.Drawing.Point(58, 606);
+            this.lblChangeEmail.Location = new System.Drawing.Point(58, 598);
             this.lblChangeEmail.Name = "lblChangeEmail";
             this.lblChangeEmail.Size = new System.Drawing.Size(214, 37);
             this.lblChangeEmail.TabIndex = 9;
@@ -158,7 +158,7 @@
             this.lblChangePhoneNumber.AutoSize = true;
             this.lblChangePhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChangePhoneNumber.ForeColor = System.Drawing.Color.Blue;
-            this.lblChangePhoneNumber.Location = new System.Drawing.Point(58, 894);
+            this.lblChangePhoneNumber.Location = new System.Drawing.Point(58, 886);
             this.lblChangePhoneNumber.Name = "lblChangePhoneNumber";
             this.lblChangePhoneNumber.Size = new System.Drawing.Size(345, 37);
             this.lblChangePhoneNumber.TabIndex = 21;
@@ -170,7 +170,7 @@
             this.lblChangeAddress.AutoSize = true;
             this.lblChangeAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChangeAddress.ForeColor = System.Drawing.Color.Blue;
-            this.lblChangeAddress.Location = new System.Drawing.Point(58, 750);
+            this.lblChangeAddress.Location = new System.Drawing.Point(58, 742);
             this.lblChangeAddress.Name = "lblChangeAddress";
             this.lblChangeAddress.Size = new System.Drawing.Size(252, 37);
             this.lblChangeAddress.TabIndex = 20;
@@ -181,7 +181,7 @@
             // 
             this.lblPhoneNumber.AutoSize = true;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumber.Location = new System.Drawing.Point(58, 857);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(58, 841);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(227, 37);
             this.lblPhoneNumber.TabIndex = 19;
@@ -191,7 +191,7 @@
             // 
             this.lblPhoneNumberL.AutoSize = true;
             this.lblPhoneNumberL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumberL.Location = new System.Drawing.Point(58, 820);
+            this.lblPhoneNumberL.Location = new System.Drawing.Point(58, 804);
             this.lblPhoneNumberL.Name = "lblPhoneNumberL";
             this.lblPhoneNumberL.Size = new System.Drawing.Size(239, 37);
             this.lblPhoneNumberL.TabIndex = 18;
@@ -201,7 +201,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(58, 713);
+            this.lblAddress.Location = new System.Drawing.Point(58, 697);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(135, 37);
             this.lblAddress.TabIndex = 17;
@@ -211,7 +211,7 @@
             // 
             this.lblAddressL.AutoSize = true;
             this.lblAddressL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressL.Location = new System.Drawing.Point(58, 676);
+            this.lblAddressL.Location = new System.Drawing.Point(58, 660);
             this.lblAddressL.Name = "lblAddressL";
             this.lblAddressL.Size = new System.Drawing.Size(142, 37);
             this.lblAddressL.TabIndex = 16;
@@ -231,7 +231,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1180, 970);
+            this.ClientSize = new System.Drawing.Size(1180, 978);
             this.Controls.Add(this.lblAccountInfo);
             this.Controls.Add(this.lblChangePhoneNumber);
             this.Controls.Add(this.lblChangeAddress);
@@ -251,6 +251,7 @@
             this.Controls.Add(this.lblUsernameL);
             this.Name = "frmAccount";
             this.Text = "Account";
+            this.Activated += new System.EventHandler(this.frmAccount_Activated);
             this.Load += new System.EventHandler(this.frmAccount_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

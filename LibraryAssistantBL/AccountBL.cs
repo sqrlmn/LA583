@@ -57,5 +57,40 @@ namespace LibraryAssistantBL
             string phone = accountDal.GetUserPhoneDAL(username);
             return phone;
         }
+
+        public bool UpdateUserNameBL(string username, string firstName, string lastName)
+        {
+            AccountDAL accountDal = new AccountDAL();
+            bool result = accountDal.UpdateUserNameDAL(username, firstName, lastName);
+            return result;
+        }
+
+        public bool UpdateUserPasswordBL(string username, string password)
+        {
+            AccountDAL accountDal = new AccountDAL();
+            bool result = accountDal.UpdateUserPasswordDAL(username, password);
+            return result;
+        }
+
+        public bool UpdateUserEmailBL(string username, string emailAddress)
+        {
+            AccountDAL accountDal = new AccountDAL();
+            bool result = accountDal.UpdateUserEmailDAL(username, emailAddress);
+            return result;
+        }
+
+        public bool UpdateUserAddressBL(string username, string address)
+        {
+            AccountDAL accountDal = new AccountDAL();
+            bool result = accountDal.UpdateUserAddressDAL(username, address);
+            return result;
+        }
+
+        public bool UpdateUserPhoneBL(string username, string phoneNumber)
+        {
+            AccountDAL accountDal = new AccountDAL();
+            bool result = accountDal.UpdateUserPhoneDAL(username, phoneNumber);
+            return result;
+        }
     }
 }

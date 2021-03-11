@@ -67,7 +67,7 @@
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearch.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSearch.Location = new System.Drawing.Point(86, 139);
+            this.lblSearch.Location = new System.Drawing.Point(86, 147);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(147, 42);
             this.lblSearch.TabIndex = 2;
@@ -76,7 +76,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(239, 136);
+            this.txtSearch.Location = new System.Drawing.Point(239, 144);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(918, 49);
             this.txtSearch.TabIndex = 3;
@@ -87,7 +87,7 @@
             this.lblAccountType.AutoSize = true;
             this.lblAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccountType.ForeColor = System.Drawing.Color.Red;
-            this.lblAccountType.Location = new System.Drawing.Point(12, 46);
+            this.lblAccountType.Location = new System.Drawing.Point(12, 50);
             this.lblAccountType.Name = "lblAccountType";
             this.lblAccountType.Size = new System.Drawing.Size(213, 37);
             this.lblAccountType.TabIndex = 5;
@@ -96,7 +96,7 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(1163, 120);
+            this.btnSearch.Location = new System.Drawing.Point(1163, 128);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(163, 81);
             this.btnSearch.TabIndex = 6;
@@ -122,7 +122,7 @@
             this.lblEditAccount.AutoSize = true;
             this.lblEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditAccount.ForeColor = System.Drawing.Color.Blue;
-            this.lblEditAccount.Location = new System.Drawing.Point(12, 83);
+            this.lblEditAccount.Location = new System.Drawing.Point(12, 91);
             this.lblEditAccount.Name = "lblEditAccount";
             this.lblEditAccount.Size = new System.Drawing.Size(72, 37);
             this.lblEditAccount.TabIndex = 9;
@@ -133,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1431, 828);
+            this.ClientSize = new System.Drawing.Size(1431, 829);
             this.Controls.Add(this.lblEditAccount);
             this.Controls.Add(this.dgvSearch);
             this.Controls.Add(this.btnSearch);

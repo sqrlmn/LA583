@@ -80,5 +80,10 @@ namespace LibraryAssistant
             fEditAccount.type = 4;
             fEditAccount.ShowDialog();
         }
+
+        private void frmAccount_Activated(object sender, EventArgs e)
+        {
+            LoadAccountInformation();
+        }
     }
 }
