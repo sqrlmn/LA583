@@ -159,7 +159,7 @@
             this.btnCancel.Location = new System.Drawing.Point(781, 908);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(184, 100);
-            this.btnCancel.TabIndex = 16;
+            this.btnCancel.TabIndex = 41;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -170,7 +170,7 @@
             this.btnCreate.Location = new System.Drawing.Point(512, 908);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(184, 100);
-            this.btnCreate.TabIndex = 15;
+            this.btnCreate.TabIndex = 40;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
