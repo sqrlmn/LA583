@@ -40,12 +40,12 @@ namespace LibraryAssistant
                 {
                     //tbAdminEmail.Clear();
                     //tbAdminPass.Clear();
-                    MessageBox.Show("Invalid username or password...");
+                    MessageBox.Show("Invalid username or password...", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Enter the fields properly...");
+                MessageBox.Show("Enter the fields properly...", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }

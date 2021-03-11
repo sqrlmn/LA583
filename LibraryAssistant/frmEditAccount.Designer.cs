@@ -39,6 +39,8 @@
             this.lblInformation4 = new System.Windows.Forms.Label();
             this.txtInformation2 = new System.Windows.Forms.TextBox();
             this.lblInformation2 = new System.Windows.Forms.Label();
+            this.mtbInformation1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtbInformation2 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -68,7 +70,8 @@
             this.txtInformation1.Location = new System.Drawing.Point(516, 99);
             this.txtInformation1.Name = "txtInformation1";
             this.txtInformation1.Size = new System.Drawing.Size(453, 44);
-            this.txtInformation1.TabIndex = 2;
+            this.txtInformation1.TabIndex = 1;
+            this.txtInformation1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
             // 
             // btnSave
             // 
@@ -76,9 +79,10 @@
             this.btnSave.Location = new System.Drawing.Point(516, 328);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(184, 100);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -86,7 +90,7 @@
             this.btnCancel.Location = new System.Drawing.Point(785, 328);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(184, 100);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -97,7 +101,8 @@
             this.txtInformation3.Location = new System.Drawing.Point(516, 214);
             this.txtInformation3.Name = "txtInformation3";
             this.txtInformation3.Size = new System.Drawing.Size(453, 44);
-            this.txtInformation3.TabIndex = 6;
+            this.txtInformation3.TabIndex = 3;
+            this.txtInformation3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
             // 
             // lblInformation3
             // 
@@ -116,7 +121,8 @@
             this.txtInformation4.Location = new System.Drawing.Point(516, 264);
             this.txtInformation4.Name = "txtInformation4";
             this.txtInformation4.Size = new System.Drawing.Size(453, 44);
-            this.txtInformation4.TabIndex = 8;
+            this.txtInformation4.TabIndex = 4;
+            this.txtInformation4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
             // 
             // lblInformation4
             // 
@@ -135,7 +141,8 @@
             this.txtInformation2.Location = new System.Drawing.Point(516, 149);
             this.txtInformation2.Name = "txtInformation2";
             this.txtInformation2.Size = new System.Drawing.Size(453, 44);
-            this.txtInformation2.TabIndex = 10;
+            this.txtInformation2.TabIndex = 2;
+            this.txtInformation2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
             // 
             // lblInformation2
             // 
@@ -148,11 +155,33 @@
             this.lblInformation2.Text = "Information 2";
             this.lblInformation2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // mtbInformation1
+            // 
+            this.mtbInformation1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbInformation1.Location = new System.Drawing.Point(516, 214);
+            this.mtbInformation1.Mask = "(000) 000-0000";
+            this.mtbInformation1.Name = "mtbInformation1";
+            this.mtbInformation1.Size = new System.Drawing.Size(453, 44);
+            this.mtbInformation1.TabIndex = 5;
+            this.mtbInformation1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            // 
+            // mtbInformation2
+            // 
+            this.mtbInformation2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbInformation2.Location = new System.Drawing.Point(516, 264);
+            this.mtbInformation2.Mask = "(000) 000-0000";
+            this.mtbInformation2.Name = "mtbInformation2";
+            this.mtbInformation2.Size = new System.Drawing.Size(453, 44);
+            this.mtbInformation2.TabIndex = 6;
+            this.mtbInformation2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            // 
             // frmEditAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 450);
+            this.Controls.Add(this.mtbInformation2);
+            this.Controls.Add(this.mtbInformation1);
             this.Controls.Add(this.txtInformation2);
             this.Controls.Add(this.lblInformation2);
             this.Controls.Add(this.txtInformation4);
@@ -185,5 +214,7 @@
         private System.Windows.Forms.Label lblInformation4;
         private System.Windows.Forms.TextBox txtInformation2;
         private System.Windows.Forms.Label lblInformation2;
+        private System.Windows.Forms.MaskedTextBox mtbInformation1;
+        private System.Windows.Forms.MaskedTextBox mtbInformation2;
     }
 }
