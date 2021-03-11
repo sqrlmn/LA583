@@ -191,5 +191,30 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
+
+        public bool CreateNewAccountDAL(string username, string password, string type, string firstName, string lastName, string emailAddress, string address, string phoneNumber)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO accounts (username, password, type, firstName, lastName, emailAddress, address, phoneNumber) VALUES(@username, @password, @type, @firstName, @lastName, @emailAddress, @address, @phoneNumber)", conn);
+            cmd.Parameters.Add(new MySqlParameter("@username", username));
+            cmd.Parameters.Add(new MySqlParameter("@password", password));
+            cmd.Parameters.Add(new MySqlParameter("@type", type));
+            cmd.Parameters.Add(new MySqlParameter("@firstName", firstName));
+            cmd.Parameters.Add(new MySqlParameter("@lastName", lastName));
+            cmd.Parameters.Add(new MySqlParameter("@emailAddress", emailAddress));
+            cmd.Parameters.Add(new MySqlParameter("@address", address));
+            cmd.Parameters.Add(new MySqlParameter("@phoneNumber", phoneNumber));
+            conn.Open();
+            int rowAffected = cmd.ExecuteNonQuery();
+            conn.Close();
+            if (rowAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
