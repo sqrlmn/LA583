@@ -161,6 +161,12 @@
     <Compile Include="frmBook.Designer.cs">
       <DependentUpon>frmBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditAccount.Designer.cs">
+      <DependentUpon>frmEditAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBook.resx">
       <DependentUpon>frmBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditAccount.resx">
+      <DependentUpon>frmEditAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmForgotPw.resx">
       <DependentUpon>frmForgotPw.cs</DependentUpon>

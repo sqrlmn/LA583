@@ -42,7 +42,7 @@
             // lblLogout
             // 
             this.lblLogout.AutoSize = true;
-            this.lblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogout.ForeColor = System.Drawing.Color.Blue;
             this.lblLogout.Location = new System.Drawing.Point(1303, 9);
             this.lblLogout.Name = "lblLogout";
@@ -120,7 +120,7 @@
             // lblEditAccount
             // 
             this.lblEditAccount.AutoSize = true;
-            this.lblEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditAccount.ForeColor = System.Drawing.Color.Blue;
             this.lblEditAccount.Location = new System.Drawing.Point(12, 83);
             this.lblEditAccount.Name = "lblEditAccount";
