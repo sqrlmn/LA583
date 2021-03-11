@@ -51,7 +51,7 @@ namespace LibraryAssistantBL
             return address;
         }
 
-        public string GetUserPhoneNameBL(string username)
+        public string GetUserPhoneBL(string username)
         {
             AccountDAL accountDal = new AccountDAL();
             string phone = accountDal.GetUserPhoneDAL(username);

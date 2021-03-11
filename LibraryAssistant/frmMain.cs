@@ -82,6 +82,7 @@ namespace LibraryAssistant
         private void lblEditAccount_Click(object sender, EventArgs e)
         {
             frmAccount fAccount = new frmAccount();
+            fAccount.username = username;
             fAccount.ShowDialog();
         }
     }

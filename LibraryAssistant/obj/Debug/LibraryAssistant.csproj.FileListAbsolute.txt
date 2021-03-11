@@ -81,3 +81,4 @@ C:\Users\nghia.luong\source\repos\LA583\LibraryAssistant\obj\Debug\LibraryAssist
 C:\Users\nghia.luong\source\repos\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.frmMain.resources
 C:\Users\nghia.luong\source\repos\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.frmRegister.resources
 C:\Users\nghia.luong\source\repos\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.frmAccount.resources
+C:\Users\nghia.luong\source\repos\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.frmEditAccount.resources

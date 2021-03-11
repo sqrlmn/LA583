@@ -103,7 +103,7 @@
             // lblRegister
             // 
             this.lblRegister.AutoSize = true;
-            this.lblRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegister.ForeColor = System.Drawing.Color.Blue;
             this.lblRegister.Location = new System.Drawing.Point(28, 579);
             this.lblRegister.Name = "lblRegister";
@@ -115,7 +115,7 @@
             // lblForgotPw
             // 
             this.lblForgotPw.AutoSize = true;
-            this.lblForgotPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForgotPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForgotPw.ForeColor = System.Drawing.Color.Blue;
             this.lblForgotPw.Location = new System.Drawing.Point(387, 579);
             this.lblForgotPw.Name = "lblForgotPw";
