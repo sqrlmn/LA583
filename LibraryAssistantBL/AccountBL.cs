@@ -99,5 +99,12 @@ namespace LibraryAssistantBL
             bool result = accountDal.CreateNewAccountDAL(username, password, type, firstName, lastName, emailAddress, address, phoneNumber);
             return result;
         }
+
+        public bool CheckUsernameBL(string username)
+        {
+            AccountDAL accountDal = new AccountDAL();
+            bool result = accountDal.CheckUsernameDAL(username);
+            return result;
+        }
     }
 }

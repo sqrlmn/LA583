@@ -30,13 +30,20 @@ namespace LibraryAssistant
                 if (txtPassword.Text == txtConfirmPassword.Text)
                 {
                     AccountBL accountBl = new AccountBL();
-                    if (accountBl.CreateNewAccountBL(txtUsername.Text, txtPassword.Text, "0", txtFirstName.Text, txtLastName.Text, txtEmail.Text, rtbAddress.Text, mtbPhone.Text))
+                    if (!accountBl.CheckUsernameBL(txtUsername.Text))
                     {
-                        this.Close();
+                        if (accountBl.CreateNewAccountBL(txtUsername.Text, txtPassword.Text, "0", txtFirstName.Text, txtLastName.Text, txtEmail.Text, rtbAddress.Text, mtbPhone.Text))
+                        {
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("There is an error...", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("There is an error...", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Username is already existed.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
