@@ -36,6 +36,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvSearch = new System.Windows.Forms.DataGridView();
             this.lblEditAccount = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,6 +114,7 @@
             this.dgvSearch.RowTemplate.Height = 33;
             this.dgvSearch.Size = new System.Drawing.Size(1356, 539);
             this.dgvSearch.TabIndex = 8;
+            this.dgvSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearch_CellContentClick);
             this.dgvSearch.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSearch_CellMouseClick);
             this.dgvSearch.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSearch_CellMouseDoubleClick);
             // 
@@ -128,11 +130,22 @@
             this.lblEditAccount.Text = "Edit";
             this.lblEditAccount.Click += new System.EventHandler(this.lblEditAccount_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(578, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(144, 44);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Book Detail";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1431, 828);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblEditAccount);
             this.Controls.Add(this.dgvSearch);
             this.Controls.Add(this.btnSearch);
@@ -160,5 +173,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvSearch;
         private System.Windows.Forms.Label lblEditAccount;
+        private System.Windows.Forms.Button button1;
     }
 }
