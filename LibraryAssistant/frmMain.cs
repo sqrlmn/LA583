@@ -78,6 +78,9 @@ namespace LibraryAssistant
         private void dgvSearch_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             dgvSearch.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            frmBook fBook = new frmBook();
+            int check = e.ColumnIndex;
+            fBook.Show();
         }
 
         private void lblEditAccount_Click(object sender, EventArgs e)
@@ -89,12 +92,7 @@ namespace LibraryAssistant
         private void dgvSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = dgvSearch.CurrentCell.RowIndex;
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmBook fBook = new frmBook();
-            fBook.Show();
         }
     }
 }

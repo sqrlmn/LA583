@@ -12,9 +12,15 @@ namespace LibraryAssistant
 {
     public partial class frmBook : Form
     {
+        string ISBN;
         public frmBook()
         {
             InitializeComponent();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

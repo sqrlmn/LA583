@@ -138,7 +138,6 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Book Detail";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmMain
             // 
