@@ -77,6 +77,18 @@ namespace LibraryAssistant
 
         private void dgvSearch_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            dgvSearch.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            int column = e.ColumnIndex;
+            int row = e.RowIndex;
+            string isbn = dgvSearch.Rows[row].Cells[0].Value.ToString();
+            string title = dgvSearch.Rows[row].Cells[1].Value.ToString();
+            string author = dgvSearch.Rows[row].Cells[2].Value.ToString();
+            string subject = dgvSearch.Rows[row].Cells[3].Value.ToString();
+            string pages = dgvSearch.Rows[row].Cells[4].Value.ToString();
+            string quantity = dgvSearch.Rows[row].Cells[5].Value.ToString();
+            string rating = dgvSearch.Rows[row].Cells[6].Value.ToString();
+            frmBook fBook = new frmBook(isbn, title, author, subject, pages, quantity, rating);
+            fBook.Show();
         }
 
         private void lblEditAccount_Click(object sender, EventArgs e)
