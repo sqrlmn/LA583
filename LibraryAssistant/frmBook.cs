@@ -13,6 +13,7 @@ namespace LibraryAssistant
 {
     public partial class frmBook : Form
     {
+        public string Username;
         string quantity;
         string isbn;
 
@@ -47,10 +48,8 @@ namespace LibraryAssistant
             {
                 MessageBox.Show("Book Reserved!");
                 ReservationBL reserveBL = new ReservationBL();
-
+                reserveBL.SetReservationBL("1", Username, isbn);
             }
-
-
         }
     }
 }
