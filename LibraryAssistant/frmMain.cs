@@ -85,5 +85,11 @@ namespace LibraryAssistant
             fAccount.username = username;
             fAccount.ShowDialog();
         }
+
+        private void lblViewCart_Click(object sender, EventArgs e)
+        {
+            frmCarts frcarts = new frmCarts();
+            frcarts.ShowDialog();
+        }
     }
 }
