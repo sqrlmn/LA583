@@ -39,6 +39,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.addtoCart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -134,8 +135,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(171, 232);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(98, 241);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(166, 36);
             this.button1.TabIndex = 12;
@@ -151,11 +152,22 @@
             this.comboBox1.Size = new System.Drawing.Size(46, 24);
             this.comboBox1.TabIndex = 13;
             // 
+            // addtoCart
+            // 
+            this.addtoCart.Location = new System.Drawing.Point(287, 241);
+            this.addtoCart.Margin = new System.Windows.Forms.Padding(2);
+            this.addtoCart.Name = "addtoCart";
+            this.addtoCart.Size = new System.Drawing.Size(166, 36);
+            this.addtoCart.TabIndex = 14;
+            this.addtoCart.Text = "Add to Cart";
+            this.addtoCart.UseVisualStyleBackColor = true;
+            // 
             // frmBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 288);
+            this.Controls.Add(this.addtoCart);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label10);
@@ -167,7 +179,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmBook";
             this.Text = "Book";
             this.Load += new System.EventHandler(this.frmBook_Load);
@@ -189,5 +201,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button addtoCart;
     }
 }
