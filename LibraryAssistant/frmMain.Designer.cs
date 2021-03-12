@@ -37,6 +37,7 @@
             this.dgvSearch = new System.Windows.Forms.DataGridView();
             this.lblEditAccount = new System.Windows.Forms.Label();
             this.lblViewCart = new System.Windows.Forms.Label();
+            this.lblBookReturn = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,10 +46,9 @@
             this.lblLogout.AutoSize = true;
             this.lblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogout.ForeColor = System.Drawing.Color.Blue;
-            this.lblLogout.Location = new System.Drawing.Point(869, 6);
-            this.lblLogout.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLogout.Location = new System.Drawing.Point(1304, 9);
             this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(72, 25);
+            this.lblLogout.Size = new System.Drawing.Size(116, 37);
             this.lblLogout.TabIndex = 0;
             this.lblLogout.Text = "Logout";
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
@@ -58,10 +58,9 @@
             this.lblFullname.AutoSize = true;
             this.lblFullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFullname.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblFullname.Location = new System.Drawing.Point(8, 6);
-            this.lblFullname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFullname.Location = new System.Drawing.Point(12, 9);
             this.lblFullname.Name = "lblFullname";
-            this.lblFullname.Size = new System.Drawing.Size(92, 25);
+            this.lblFullname.Size = new System.Drawing.Size(149, 37);
             this.lblFullname.TabIndex = 1;
             this.lblFullname.Text = "Fullname";
             // 
@@ -70,20 +69,18 @@
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearch.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSearch.Location = new System.Drawing.Point(57, 94);
-            this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSearch.Location = new System.Drawing.Point(86, 147);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(95, 29);
+            this.lblSearch.Size = new System.Drawing.Size(147, 42);
             this.lblSearch.TabIndex = 2;
             this.lblSearch.Text = "Search:";
             // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(159, 92);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearch.Location = new System.Drawing.Point(238, 144);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(613, 34);
+            this.txtSearch.Size = new System.Drawing.Size(918, 49);
             this.txtSearch.TabIndex = 3;
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
@@ -92,20 +89,18 @@
             this.lblAccountType.AutoSize = true;
             this.lblAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccountType.ForeColor = System.Drawing.Color.Red;
-            this.lblAccountType.Location = new System.Drawing.Point(8, 32);
-            this.lblAccountType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAccountType.Location = new System.Drawing.Point(12, 50);
             this.lblAccountType.Name = "lblAccountType";
-            this.lblAccountType.Size = new System.Drawing.Size(134, 25);
+            this.lblAccountType.Size = new System.Drawing.Size(213, 37);
             this.lblAccountType.TabIndex = 5;
             this.lblAccountType.Text = "Account Type";
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(775, 82);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Location = new System.Drawing.Point(1162, 128);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(109, 52);
+            this.btnSearch.Size = new System.Drawing.Size(164, 81);
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -114,13 +109,12 @@
             // dgvSearch
             // 
             this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearch.Location = new System.Drawing.Point(26, 163);
-            this.dgvSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvSearch.Location = new System.Drawing.Point(39, 255);
             this.dgvSearch.Name = "dgvSearch";
             this.dgvSearch.ReadOnly = true;
             this.dgvSearch.RowHeadersWidth = 82;
             this.dgvSearch.RowTemplate.Height = 33;
-            this.dgvSearch.Size = new System.Drawing.Size(904, 345);
+            this.dgvSearch.Size = new System.Drawing.Size(1356, 539);
             this.dgvSearch.TabIndex = 8;
             this.dgvSearch.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSearch_CellMouseClick);
             this.dgvSearch.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSearch_CellMouseDoubleClick);
@@ -130,10 +124,9 @@
             this.lblEditAccount.AutoSize = true;
             this.lblEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditAccount.ForeColor = System.Drawing.Color.Blue;
-            this.lblEditAccount.Location = new System.Drawing.Point(8, 58);
-            this.lblEditAccount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEditAccount.Location = new System.Drawing.Point(12, 91);
             this.lblEditAccount.Name = "lblEditAccount";
-            this.lblEditAccount.Size = new System.Drawing.Size(45, 25);
+            this.lblEditAccount.Size = new System.Drawing.Size(72, 37);
             this.lblEditAccount.TabIndex = 9;
             this.lblEditAccount.Text = "Edit";
             this.lblEditAccount.Click += new System.EventHandler(this.lblEditAccount_Click);
@@ -143,19 +136,31 @@
             this.lblViewCart.AutoSize = true;
             this.lblViewCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewCart.ForeColor = System.Drawing.Color.Blue;
-            this.lblViewCart.Location = new System.Drawing.Point(853, 45);
-            this.lblViewCart.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblViewCart.Location = new System.Drawing.Point(1280, 70);
             this.lblViewCart.Name = "lblViewCart";
-            this.lblViewCart.Size = new System.Drawing.Size(88, 25);
+            this.lblViewCart.Size = new System.Drawing.Size(142, 37);
             this.lblViewCart.TabIndex = 10;
             this.lblViewCart.Text = "view cart";
             this.lblViewCart.Click += new System.EventHandler(this.lblViewCart_Click);
             // 
+            // lblBookReturn
+            // 
+            this.lblBookReturn.AutoSize = true;
+            this.lblBookReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookReturn.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblBookReturn.Location = new System.Drawing.Point(354, 18);
+            this.lblBookReturn.Name = "lblBookReturn";
+            this.lblBookReturn.Size = new System.Drawing.Size(194, 37);
+            this.lblBookReturn.TabIndex = 11;
+            this.lblBookReturn.Text = "Book Return";
+            this.lblBookReturn.Click += new System.EventHandler(this.lblBookReturn_Click);
+            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 531);
+            this.ClientSize = new System.Drawing.Size(1431, 830);
+            this.Controls.Add(this.lblBookReturn);
             this.Controls.Add(this.lblViewCart);
             this.Controls.Add(this.lblEditAccount);
             this.Controls.Add(this.dgvSearch);
@@ -165,7 +170,6 @@
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.lblFullname);
             this.Controls.Add(this.lblLogout);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMain";
             this.Text = "Library Assistant";
             this.Load += new System.EventHandler(this.frmMain_Load);
@@ -186,5 +190,6 @@
         private System.Windows.Forms.DataGridView dgvSearch;
         private System.Windows.Forms.Label lblEditAccount;
         private System.Windows.Forms.Label lblViewCart;
+        private System.Windows.Forms.Label lblBookReturn;
     }
 }

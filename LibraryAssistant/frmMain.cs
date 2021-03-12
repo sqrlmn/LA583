@@ -30,6 +30,7 @@ namespace LibraryAssistant
         public static double BookPrice;
         public static int BookCopy;
         public static double BookRating;
+        public static double BookAvailability;
 
         private void lblLogout_Click(object sender, EventArgs e)
         {
@@ -103,6 +104,17 @@ namespace LibraryAssistant
         {
             frmCarts frcarts = new frmCarts(username);
             frcarts.ShowDialog();
+        }
+
+        private void lblReturnBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblBookReturn_Click(object sender, EventArgs e)
+        {
+            AccountBL lbAccount = new AccountBL();
+
         }
     }
 }
