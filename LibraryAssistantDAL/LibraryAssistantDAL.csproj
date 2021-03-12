@@ -89,7 +89,9 @@
   <ItemGroup>
     <Compile Include="AccountDAL.cs" />
     <Compile Include="BookDAL.cs" />
+    <Compile Include="CartsDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReveiewsDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
