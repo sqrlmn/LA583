@@ -88,6 +88,7 @@ namespace LibraryAssistant
             string quantity = dgvSearch.Rows[row].Cells[5].Value.ToString();
             string rating = dgvSearch.Rows[row].Cells[6].Value.ToString();
             frmBook fBook = new frmBook(isbn, title, author, subject, pages, quantity, rating);
+            fBook.Username = username;
             fBook.Show();
         }
 
