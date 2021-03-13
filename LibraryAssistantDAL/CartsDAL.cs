@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace LibraryAssistantDAL
 {
-    class CartsDAL
+    public  class CartsDAL
     {
         public DataSet getCartsDAL(string username)
         {
@@ -18,12 +18,12 @@ namespace LibraryAssistantDAL
             da.Fill(ds);
             return ds;
         }
-        public bool CreateCartsbyISBN(string username, string ISBN, int ID)
+        public bool CreateCartsbyUsername(string username, string ISBN, int ID)
         {
-            ID+=1;
+            
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
             MySqlCommand cmd = new MySqlCommand("INSERT INTO carts (ID, bookISBN, accountsUsername) VALUES(@ID, @ISBN, @username)", conn);
-            cmd.Parameters.Add(new MySqlParameter("@maxid", ID));
+            cmd.Parameters.Add(new MySqlParameter("@ID", ID));
             cmd.Parameters.Add(new MySqlParameter("@ISBN",ISBN ));
             cmd.Parameters.Add(new MySqlParameter("@username", username));
             conn.Open();
@@ -43,9 +43,42 @@ namespace LibraryAssistantDAL
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
             MySqlCommand cmd = new MySqlCommand("SELECT MAX(ID) FROM carts; ", conn);
             conn.Open();
-            int id = (int)cmd.ExecuteScalar();
+            int id = cmd.ExecuteNonQuery();
             conn.Close();
+            id += 1;
             return id;
+        }
+        public bool RemoveCartsbyUsername(string username)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM carts WHERE accountsUsername = @username", conn);
+            conn.Open();
+            int rowAffected = cmd.ExecuteNonQuery();
+            conn.Close();
+            if (rowAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool RemoveCartsbyISBN(string username, string ISBN)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM carts WHERE accountsUsername = @username, bookISBN = @ISBN", conn);
+            conn.Open();
+            int rowAffected = cmd.ExecuteNonQuery();
+            conn.Close();
+            if (rowAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

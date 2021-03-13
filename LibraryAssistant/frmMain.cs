@@ -124,5 +124,11 @@ namespace LibraryAssistant
                 lblBookReturn.Hide();
             }
         }
+
+        private void checkout_Click(object sender, EventArgs e)
+        {
+            CartsBL carts = new CartsBL();
+            bool truthstatement = carts.removeCartsbyusername(username);
+        }
     }
 }
