@@ -128,7 +128,9 @@ namespace LibraryAssistant
             AlertBL newReturnAlert = new AlertBL();
             DateTime today = DateTime.Today;
             DateTime expiryDate = today.AddDays(30);
-            newReturnAlert.SetAlertReturnBL(username, 1, expiryDate.ToString());
+            Random rnd_id = new Random();
+            int alert_id = rnd_id.Next(1, 1000);
+            newReturnAlert.SetAlertReturnBL(username, alert_id, expiryDate.ToString());
         }
     }
 }
