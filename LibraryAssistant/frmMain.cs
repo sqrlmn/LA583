@@ -30,6 +30,7 @@ namespace LibraryAssistant
         public static double BookPrice;
         public static int BookCopy;
         public static double BookRating;
+        public static double BookAvailability;
 
         private void lblLogout_Click(object sender, EventArgs e)
         {
@@ -61,6 +62,9 @@ namespace LibraryAssistant
             string lastName = accountBl.GetUserLastNameBL(username);
             bool type = accountBl.GetUserTypeBL(username);
             lblFullname.Text = firstName + " " + lastName;
+            AlertBL alertBL = new AlertBL();
+            alertBL.GetAlertUserBL(username);
+
             if (type)
             {
                 lblAccountType.Text = "Librarian";
@@ -88,6 +92,7 @@ namespace LibraryAssistant
             string quantity = dgvSearch.Rows[row].Cells[5].Value.ToString();
             string rating = dgvSearch.Rows[row].Cells[6].Value.ToString();
             frmBook fBook = new frmBook(isbn, title, author, subject, pages, quantity, rating);
+            fBook.Username = username;
             fBook.Show();
         }
 
@@ -96,6 +101,37 @@ namespace LibraryAssistant
             frmAccount fAccount = new frmAccount();
             fAccount.username = username;
             fAccount.ShowDialog();
+        }
+
+        private void lblViewCart_Click(object sender, EventArgs e)
+        {
+            frmCarts frcarts = new frmCarts(username);
+            frcarts.ShowDialog();
+        }
+
+        private void lblReturnBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblBookReturn_Click(object sender, EventArgs e)
+        {
+            AccountBL lbAccount = new AccountBL();
+            bool Actype = lbAccount.GetUserTypeBL(username);
+            if (Actype == true)
+            {
+                lblBookReturn.Show();
+            }
+            else
+            {
+                lblBookReturn.Hide();
+            }
+        }
+
+        private void checkout_Click(object sender, EventArgs e)
+        {
+            CartsBL carts = new CartsBL();
+            bool truthstatement = carts.removeCartsbyusername(username);
         }
     }
 }

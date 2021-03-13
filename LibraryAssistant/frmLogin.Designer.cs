@@ -150,6 +150,7 @@
             this.Controls.Add(this.lblUsername);
             this.Name = "frmLogin";
             this.Text = "Library Assistant";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
