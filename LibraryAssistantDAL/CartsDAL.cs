@@ -13,8 +13,8 @@ namespace LibraryAssistantDAL
         public DataSet getCartsDAL(string username)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT accountsUsername, bookISBN, ID ", conn);
-            DataSet ds = new DataSet("Books");
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT accountsUsername, bookISBN, ID from carts", conn);
+            DataSet ds = new DataSet("carts");
             da.Fill(ds);
             return ds;
         }

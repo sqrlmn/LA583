@@ -7,14 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryAssistantBL;
 
 namespace LibraryAssistant
 {
     public partial class frmCarts : Form
     {
+       
         public frmCarts(string username)
         {
+
             InitializeComponent();
+            CartsBL carts = new CartsBL();
+            DataSet ds = carts.getCartsBL(username);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
