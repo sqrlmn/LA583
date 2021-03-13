@@ -161,6 +161,7 @@
             this.addtoCart.TabIndex = 14;
             this.addtoCart.Text = "Add to Cart";
             this.addtoCart.UseVisualStyleBackColor = true;
+            this.addtoCart.Click += new System.EventHandler(this.addtoCart_Click);
             // 
             // frmBook
             // 

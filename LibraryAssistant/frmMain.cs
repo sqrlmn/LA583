@@ -116,5 +116,11 @@ namespace LibraryAssistant
             AccountBL lbAccount = new AccountBL();
 
         }
+
+        private void checkout_Click(object sender, EventArgs e)
+        {
+            CartsBL carts = new CartsBL();
+            bool truthstatement = carts.removeCartsbyusername(username);
+        }
     }
 }
