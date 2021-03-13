@@ -24,8 +24,10 @@ namespace LibraryAssistantDAL
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
             MySqlCommand cmd = new MySqlCommand("DELETE FROM borrows WHERE borrowID = @username and bISBN = @isbn", conn);
+            MySqlCommand bookAdd = new MySqlCommand("Update FROM books WHERE ISBN = @isbn and availability += 1", conn);
             cmd.Parameters.Add(new MySqlParameter("@username", username));
             cmd.Parameters.Add(new MySqlParameter("@isbn", isbn));
+            bookAdd.Parameters.Add(new MySqlParameter("@isbn", isbn));
             conn.Open();
             MySqlDataReader dr = cmd.ExecuteReader();
 
