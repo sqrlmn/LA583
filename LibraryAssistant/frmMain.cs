@@ -19,7 +19,6 @@ namespace LibraryAssistant
         }
 
         public string username;
-        int rowSelected;
 
         //VARIABLES USED TO STORE BOOK GRID VIEW CLICK ROW HEADER EVENT
         public static string BookISBN;

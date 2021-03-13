@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblBookTitle = new System.Windows.Forms.Label();
+            this.lblISBNBook = new System.Windows.Forms.Label();
+            this.lblPageCountBook = new System.Windows.Forms.Label();
+            this.lblAuthorBook = new System.Windows.Forms.Label();
+            this.lblQuantityBook = new System.Windows.Forms.Label();
+            this.lblSubjectBook = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,100 +45,90 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(167, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(250, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 17);
+            this.label1.Size = new System.Drawing.Size(254, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Book Details/Reservation";
             // 
-            // label3
+            // lblBookTitle
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(167, 41);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Title";
+            this.lblBookTitle.AutoSize = true;
+            this.lblBookTitle.Location = new System.Drawing.Point(250, 64);
+            this.lblBookTitle.Name = "lblBookTitle";
+            this.lblBookTitle.Size = new System.Drawing.Size(53, 25);
+            this.lblBookTitle.TabIndex = 3;
+            this.lblBookTitle.Text = "Title";
             // 
-            // label2
+            // lblISBNBook
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 86);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "ISBN";
+            this.lblISBNBook.AutoSize = true;
+            this.lblISBNBook.Location = new System.Drawing.Point(12, 134);
+            this.lblISBNBook.Name = "lblISBNBook";
+            this.lblISBNBook.Size = new System.Drawing.Size(60, 25);
+            this.lblISBNBook.TabIndex = 4;
+            this.lblISBNBook.Text = "ISBN";
             // 
-            // label4
+            // lblPageCountBook
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(63, 86);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Page Count";
+            this.lblPageCountBook.AutoSize = true;
+            this.lblPageCountBook.Location = new System.Drawing.Point(94, 134);
+            this.lblPageCountBook.Name = "lblPageCountBook";
+            this.lblPageCountBook.Size = new System.Drawing.Size(125, 25);
+            this.lblPageCountBook.TabIndex = 5;
+            this.lblPageCountBook.Text = "Page Count";
             // 
-            // label5
+            // lblAuthorBook
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(176, 86);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 17);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Author";
+            this.lblAuthorBook.AutoSize = true;
+            this.lblAuthorBook.Location = new System.Drawing.Point(264, 134);
+            this.lblAuthorBook.Name = "lblAuthorBook";
+            this.lblAuthorBook.Size = new System.Drawing.Size(75, 25);
+            this.lblAuthorBook.TabIndex = 6;
+            this.lblAuthorBook.Text = "Author";
             // 
-            // label6
+            // lblQuantityBook
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(268, 86);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 17);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Quantity";
+            this.lblQuantityBook.AutoSize = true;
+            this.lblQuantityBook.Location = new System.Drawing.Point(402, 134);
+            this.lblQuantityBook.Name = "lblQuantityBook";
+            this.lblQuantityBook.Size = new System.Drawing.Size(92, 25);
+            this.lblQuantityBook.TabIndex = 7;
+            this.lblQuantityBook.Text = "Quantity";
             // 
-            // label8
+            // lblSubjectBook
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(364, 86);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 17);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Subject";
+            this.lblSubjectBook.AutoSize = true;
+            this.lblSubjectBook.Location = new System.Drawing.Point(546, 134);
+            this.lblSubjectBook.Name = "lblSubjectBook";
+            this.lblSubjectBook.Size = new System.Drawing.Size(84, 25);
+            this.lblSubjectBook.TabIndex = 9;
+            this.lblSubjectBook.Text = "Subject";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(461, 86);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(692, 134);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 17);
+            this.label9.Size = new System.Drawing.Size(74, 25);
             this.label9.TabIndex = 10;
             this.label9.Text = "Rating";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 132);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(12, 206);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 17);
+            this.label10.Size = new System.Drawing.Size(82, 25);
             this.label10.TabIndex = 11;
             this.label10.Text = "label10";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(98, 241);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(147, 377);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 36);
+            this.button1.Size = new System.Drawing.Size(249, 56);
             this.button1.TabIndex = 12;
             this.button1.Text = "Reserve Book";
             this.button1.UseVisualStyleBackColor = true;
@@ -147,17 +137,17 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(464, 161);
+            this.comboBox1.Location = new System.Drawing.Point(696, 252);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(46, 24);
+            this.comboBox1.Size = new System.Drawing.Size(67, 33);
             this.comboBox1.TabIndex = 13;
             // 
             // addtoCart
             // 
-            this.addtoCart.Location = new System.Drawing.Point(287, 241);
-            this.addtoCart.Margin = new System.Windows.Forms.Padding(2);
+            this.addtoCart.Location = new System.Drawing.Point(430, 377);
             this.addtoCart.Name = "addtoCart";
-            this.addtoCart.Size = new System.Drawing.Size(166, 36);
+            this.addtoCart.Size = new System.Drawing.Size(249, 56);
             this.addtoCart.TabIndex = 14;
             this.addtoCart.Text = "Add to Cart";
             this.addtoCart.UseVisualStyleBackColor = true;
@@ -165,22 +155,21 @@
             // 
             // frmBook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 288);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.addtoCart);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblSubjectBook);
+            this.Controls.Add(this.lblQuantityBook);
+            this.Controls.Add(this.lblAuthorBook);
+            this.Controls.Add(this.lblPageCountBook);
+            this.Controls.Add(this.lblISBNBook);
+            this.Controls.Add(this.lblBookTitle);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmBook";
             this.Text = "Book";
             this.Load += new System.EventHandler(this.frmBook_Load);
@@ -192,12 +181,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblBookTitle;
+        private System.Windows.Forms.Label lblISBNBook;
+        private System.Windows.Forms.Label lblPageCountBook;
+        private System.Windows.Forms.Label lblAuthorBook;
+        private System.Windows.Forms.Label lblQuantityBook;
+        private System.Windows.Forms.Label lblSubjectBook;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
