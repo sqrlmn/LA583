@@ -256,3 +256,4 @@ C:\Users\vietn\source\repos\LA583-Chris\LibraryAssistant\obj\Debug\LibraryAssist
 C:\Users\vietn\source\repos\LA583-Chris\LibraryAssistant\obj\Debug\LibraryAssistant.exe
 C:\Users\vietn\source\repos\LA583-Chris\LibraryAssistant\obj\Debug\LibraryAssistant.pdb
 >>>>>>> books-Chris
+C:\Users\vietn\source\repos\LA583-Chris\LibraryAssistant\obj\Debug\LibraryAssistant.frmBookReturn.resources
