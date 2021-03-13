@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Security.Cryptography;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using LibraryAssistantBL;
@@ -25,7 +24,7 @@ namespace LibraryAssistant
             if (txtUsername.Text != string.Empty && txtPassword.Text != string.Empty)
             {
                 AccountBL accountBl = new AccountBL();
-                bool isDone = accountBl.LoginBL(txtUsername.Text, txtPassword.Text);
+                bool isDone = accountBl.LoginBL(txtUsername.Text, accountBl.GenerateSHA512String(txtPassword.Text));
                 if (isDone)
                 {
                     frmMain fMain = new frmMain();
@@ -38,8 +37,6 @@ namespace LibraryAssistant
                 }
                 else
                 {
-                    //tbAdminEmail.Clear();
-                    //tbAdminPass.Clear();
                     MessageBox.Show("Invalid username or password...", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -67,24 +64,6 @@ namespace LibraryAssistant
             //frmForgotPw fForgotPw = new frmForgotPw();
             //fForgotPw.Show();
         }
-
-        //public static string GenerateSHA512String(string inputString)
-        //{
-        //    SHA512 sha512 = SHA512Managed.Create();
-        //    byte[] bytes = Encoding.UTF8.GetBytes(inputString);
-        //    byte[] hash = sha512.ComputeHash(bytes);
-        //    return GetStringFromHash(hash);
-        //}
-
-        //private static string GetStringFromHash(byte[] hash)
-        //{
-        //    StringBuilder result = new StringBuilder();
-        //    for (int i = 0; i < hash.Length; i++)
-        //    {
-        //        result.Append(hash[i].ToString("X2"));
-        //    }
-        //    return result.ToString();
-        //}
 
         private void txt_KeyDown(object sender, KeyEventArgs e)
         {
