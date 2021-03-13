@@ -48,7 +48,6 @@ namespace LibraryAssistant
         {
             frmEditAccount fEditAccount = new frmEditAccount();
             fEditAccount.username = username;
-            fEditAccount.username = username;
             fEditAccount.Text = "Edit Name";
             fEditAccount.type = 1;
             fEditAccount.ShowDialog();
