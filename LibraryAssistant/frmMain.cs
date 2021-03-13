@@ -62,6 +62,9 @@ namespace LibraryAssistant
             string lastName = accountBl.GetUserLastNameBL(username);
             bool type = accountBl.GetUserTypeBL(username);
             lblFullname.Text = firstName + " " + lastName;
+            AlertBL alertBL = new AlertBL();
+            alertBL.GetAlertUserBL(username);
+
             if (type)
             {
                 lblAccountType.Text = "Librarian";
