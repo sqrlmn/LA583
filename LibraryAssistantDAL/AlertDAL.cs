@@ -60,10 +60,12 @@ namespace LibraryAssistantDAL
             cmd.Parameters.Add(new MySqlParameter("@username", username));
             cmd.Parameters.Add(new MySqlParameter("@returnTime", returnTime));
             conn.Open();
-            int rowAffected = cmd.ExecuteNonQuery();
-            conn.Close();
-            if (rowAffected > 0)
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
             {
+                conn.Close();
+                dr.Close();
                 return true;
             }
             else
