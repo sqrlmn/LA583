@@ -67,10 +67,12 @@ namespace LibraryAssistant
             if (type)
             {
                 lblAccountType.Text = "Librarian";
+                lblBookReturn.Show();
             }
             else
             {
                 lblAccountType.Text = "User";
+                lblBookReturn.Hide();
             }
         }
 
@@ -115,22 +117,18 @@ namespace LibraryAssistant
 
         private void lblBookReturn_Click(object sender, EventArgs e)
         {
-            AccountBL lbAccount = new AccountBL();
-            bool Actype = lbAccount.GetUserTypeBL(username);
-            if (Actype == true)
-            {
-                lblBookReturn.Show();
-            }
-            else
-            {
-                lblBookReturn.Hide();
-            }
+            frmBookReturn bookReturn = new frmBookReturn();
+            bookReturn.Show();
         }
 
         private void checkout_Click(object sender, EventArgs e)
         {
             CartsBL carts = new CartsBL();
             bool truthstatement = carts.removeCartsbyusername(username);
+            AlertBL newReturnAlert = new AlertBL();
+            DateTime today = DateTime.Today;
+            DateTime expiryDate = today.AddDays(30);
+            newReturnAlert.SetAlertReturnBL(username, 1, expiryDate.ToString());
         }
     }
 }
