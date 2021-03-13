@@ -167,6 +167,9 @@ C:\Users\travis.cripe\Desktop\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.
 C:\Users\travis.cripe\Desktop\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.exe
 C:\Users\travis.cripe\Desktop\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.pdb
 C:\Users\travis.cripe\Desktop\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.frmCarts.resources
+<<<<<<< HEAD
+C:\Users\travis.cripe\Desktop\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.frmBookReturn.resources
+=======
 C:\Users\vietn\source\repos\LA583-Chris\LibraryAssistant\bin\Debug\LibraryAssistant.exe.config
 C:\Users\vietn\source\repos\LA583-Chris\LibraryAssistant\bin\Debug\LibraryAssistant.exe
 C:\Users\vietn\source\repos\LA583-Chris\LibraryAssistant\bin\Debug\LibraryAssistant.pdb
@@ -252,3 +255,4 @@ C:\Users\vietn\source\repos\LA583-Chris\LibraryAssistant\obj\Debug\LibraryAssist
 C:\Users\vietn\source\repos\LA583-Chris\LibraryAssistant\obj\Debug\LibraryAssistant.csproj.CopyComplete
 C:\Users\vietn\source\repos\LA583-Chris\LibraryAssistant\obj\Debug\LibraryAssistant.exe
 C:\Users\vietn\source\repos\LA583-Chris\LibraryAssistant\obj\Debug\LibraryAssistant.pdb
+>>>>>>> books-Chris

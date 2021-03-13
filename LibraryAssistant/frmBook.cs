@@ -20,8 +20,12 @@ namespace LibraryAssistant
         public frmBook(string isbn, string title, string author, string subject, string pages, string quantity, string rating)
         {
             InitializeComponent();
-            label10.Text = isbn + "               "  +  pages + "               " + author + "             " + quantity + "               " + subject + "               " + rating;
-            label3.Text = title;
+            lblISBNBook.Text = isbn;
+            lblPageCountBook.Text = pages;
+            lblAuthorBook.Text = author;
+            lblQuantityBook.Text = quantity;
+            lblSubjectBook.Text = subject;
+            lblBookTitle.Text = title;
             this.quantity = quantity;
             this.isbn = isbn;
             Refresh();
@@ -49,6 +53,9 @@ namespace LibraryAssistant
                 MessageBox.Show("Book Reserved!");
                 ReservationBL reserveBL = new ReservationBL();
                 reserveBL.SetReservationBL("1", Username, isbn);
+                AlertBL alertBL = new AlertBL();
+                alertBL.SetAlertBookAvailableBL(Username, 0, 1, DateTime.Now.ToString("M/d/yyyy"));
+                
             }
         }
 

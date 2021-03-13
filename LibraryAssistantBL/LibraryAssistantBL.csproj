@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBL.cs" />
+    <Compile Include="AlertBL.cs" />
     <Compile Include="BookBL.cs" />
     <Compile Include="CartsBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

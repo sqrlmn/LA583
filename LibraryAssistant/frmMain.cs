@@ -62,6 +62,9 @@ namespace LibraryAssistant
             string lastName = accountBl.GetUserLastNameBL(username);
             bool type = accountBl.GetUserTypeBL(username);
             lblFullname.Text = firstName + " " + lastName;
+            AlertBL alertBL = new AlertBL();
+            alertBL.GetAlertUserBL(username);
+
             if (type)
             {
                 lblAccountType.Text = "Librarian";
@@ -114,7 +117,15 @@ namespace LibraryAssistant
         private void lblBookReturn_Click(object sender, EventArgs e)
         {
             AccountBL lbAccount = new AccountBL();
-
+            bool Actype = lbAccount.GetUserTypeBL(username);
+            if (Actype == true)
+            {
+                lblBookReturn.Show();
+            }
+            else
+            {
+                lblBookReturn.Hide();
+            }
         }
 
         private void checkout_Click(object sender, EventArgs e)

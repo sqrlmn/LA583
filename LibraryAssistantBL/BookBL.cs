@@ -16,5 +16,12 @@ namespace LibraryAssistantBL
             DataSet ds = bookDal.GetBooksDAL(keyword);
             return ds;
         }
+
+        public bool ReturnBookBL(string username, string isbn)
+        {
+            BookDAL bookDal = new BookDAL();
+            bool ds = bookDal.ReturnBookDAL(username, isbn);
+            return ds;
+        }
     }
 }
