@@ -53,6 +53,9 @@ namespace LibraryAssistant
                 MessageBox.Show("Book Reserved!");
                 ReservationBL reserveBL = new ReservationBL();
                 reserveBL.SetReservationBL("1", Username, isbn);
+                AlertBL alertBL = new AlertBL();
+                alertBL.SetAlertBookAvailableBL(Username, 0, 1, DateTime.Now.ToString("M/d/yyyy"));
+                
             }
         }
 

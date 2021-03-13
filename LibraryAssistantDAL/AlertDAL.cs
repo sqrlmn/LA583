@@ -10,13 +10,44 @@ namespace LibraryAssistantDAL
 {
     public class AlertDAL
     {
-        public bool AlertUserDAL(string username)
+        public bool GetAlertUserReturnDAL(string username)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM alerts WHERE date(returnTime)=@date", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT username, returnTime FROM alerts WHERE date(returnTime)=@date and username=@username", conn);
             string date = DateTime.Now.ToString("M/d/yyyy");
             cmd.Parameters.Add(new MySqlParameter("@date", date));
-            return true;
+            cmd.Parameters.Add(new MySqlParameter("@username", username));
+            conn.Open();
+            MySqlDataReader alertCheck = cmd.ExecuteReader();
+            if (alertCheck.Read())
+            {
+                conn.Close();
+                alertCheck.Close();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool GetBookAvailableDAL(string username)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("SELECT username, bookavailable FROM alerts WHERE bookAvailable > 0 and username=@username", conn);
+            cmd.Parameters.Add(new MySqlParameter("@username", username));
+            conn.Open();
+            MySqlDataReader alertCheck = cmd.ExecuteReader();
+            if (alertCheck.Read())
+            {
+                conn.Close();
+                alertCheck.Close();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool SetAlertReturnDAL(string username, int alertID, string returnTime)
@@ -41,6 +72,38 @@ namespace LibraryAssistantDAL
             }
         }
 
-       // public bool SetAlertBookAvailableDAL(string username, )
+       public bool SetAlertBookAvailableDAL(string username, int bookAvailable, int alertID, string bookname)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            string query = "INSERT INTO alerts (alertID, username, bookAvailable, conent)";
+            query += " Values (@alertID, @username, @bookAvailable, @content)";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.Add(new MySqlParameter("@alertID", alertID));
+            cmd.Parameters.Add(new MySqlParameter("@username", username));
+            cmd.Parameters.Add(new MySqlParameter("@bookAvailable", bookAvailable));
+            cmd.Parameters.Add(new MySqlParameter("@content", bookname));
+            conn.Open();
+            int rowAffected = cmd.ExecuteNonQuery();
+            conn.Close();
+            if (rowAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateBookAvailableDAL(string username)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("SELECT alerts FROM accounts WHERE username=@username ", conn);
+            cmd.Parameters.Add(new MySqlParameter("@username", username));
+            conn.Open();
+            string phone = (string)cmd.ExecuteScalar();
+            conn.Close();
+            return true;
+        }
     }
 }

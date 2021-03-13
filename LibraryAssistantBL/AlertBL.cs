@@ -7,13 +7,29 @@ using LibraryAssistantDAL;
 
 namespace LibraryAssistantBL
 {
-    class AlertBL
+    public class AlertBL
     {
-        public void LoginBL(string username)
+        public bool GetAlertUserBL(string username)
         {
             AlertDAL alertDal = new AlertDAL();
-            bool isDone = alertDal.AlertUser(username);
-            
+            bool isDone = alertDal.GetAlertUserReturnDAL(username);
+            return isDone;
         }
+
+        public bool SetAlertReturnBL(string username, int alertID, string returnTime)
+        {
+            AlertDAL alertDal = new AlertDAL();
+            bool isDone = alertDal.SetAlertReturnDAL(username, alertID, returnTime);
+            return isDone;
+        }
+
+        public bool SetAlertBookAvailableBL(string username, int bookAvailable, int alertID, string bookname)
+        {
+            AlertDAL alertDal = new AlertDAL();
+            bool isDone = alertDal.SetAlertBookAvailableDAL(username, alertID, alertID, bookname);
+            return isDone;
+        }
+
+
     }
 }
