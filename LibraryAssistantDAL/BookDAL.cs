@@ -36,6 +36,49 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
+        public bool RemovebookbyISBN(string ISBN)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM books WHERE bookISBN = @ISBN", conn);
+            cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
+            conn.Open();
+            int rowAffected = cmd.ExecuteNonQuery();
+            conn.Close();
+            if (rowAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CreateCartsbyUsername(string ISBN, string title, string author, int quantity, float price, string subject, int available, string book_condition)
+        {
+
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO books (ISBN, title, author,quantity,price,subject,available,bookCondition) VALUES(@ISBN, @title, @author, @quantity, @price, @subject, @available,@book_condition)", conn);
+            cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
+            cmd.Parameters.Add(new MySqlParameter("@title", title));
+            cmd.Parameters.Add(new MySqlParameter("@author",author));
+            cmd.Parameters.Add(new MySqlParameter("@quantity",quantity ));
+            cmd.Parameters.Add(new MySqlParameter("@price", price));
+            cmd.Parameters.Add(new MySqlParameter("@subject",subject));
+            cmd.Parameters.Add(new MySqlParameter("@avialable", available));
+            cmd.Parameters.Add(new MySqlParameter("@book_condition", book_condition));
+
+            conn.Open();
+            int rowAffected = cmd.ExecuteNonQuery();
+            conn.Close();
+            if (rowAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
     
 }

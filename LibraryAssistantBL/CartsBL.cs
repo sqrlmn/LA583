@@ -35,6 +35,12 @@ namespace LibraryAssistantBL
             bool removed = cartsDAL.RemoveCartsbyUsername(username);
             return removed;
         }
+        public DataSet getCartsbyUsername(string username)
+        {
+            CartsDAL cartsDAL = new CartsDAL();
+            DataSet ds = cartsDAL.getCartsinfobyusername(username);
+            return ds;
+        }
 
     }
 }
