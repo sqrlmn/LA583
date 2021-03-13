@@ -44,11 +44,15 @@ namespace LibraryAssistantDAL
             MySqlCommand cmd = new MySqlCommand("SELECT max(ID) FROM carts; ", conn);
             conn.Open();
             string id = cmd.ExecuteScalar().ToString();
+            if (id == "")
+            {
+                id = "0";
+            }
             conn.Close();
             int updateid = Int32.Parse(id);
             updateid += 1;
             return updateid;
-            
+
         }
         public bool RemoveCartsbyUsername(string username)
         {
