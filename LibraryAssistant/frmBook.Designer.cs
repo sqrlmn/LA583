@@ -36,10 +36,14 @@
             this.lblQuantityBook = new System.Windows.Forms.Label();
             this.lblSubjectBook = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btBookReserve = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.addtoCart = new System.Windows.Forms.Button();
+            this.lblBookISBN = new System.Windows.Forms.Label();
+            this.lblBookPages = new System.Windows.Forms.Label();
+            this.lblBoothAuthor = new System.Windows.Forms.Label();
+            this.lblBookQuantity = new System.Windows.Forms.Label();
+            this.lblBookSubject = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -114,25 +118,15 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Rating";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 206);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 25);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "label10";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(147, 377);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(249, 56);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Reserve Book";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btBookReserve.Location = new System.Drawing.Point(147, 377);
+            this.btBookReserve.Name = "btBookReserve";
+            this.btBookReserve.Size = new System.Drawing.Size(249, 56);
+            this.btBookReserve.TabIndex = 12;
+            this.btBookReserve.Text = "Reserve Book";
+            this.btBookReserve.UseVisualStyleBackColor = true;
+            this.btBookReserve.Click += new System.EventHandler(this.btBookReserve_Click);
             // 
             // comboBox1
             // 
@@ -153,15 +147,64 @@
             this.addtoCart.UseVisualStyleBackColor = true;
             this.addtoCart.Click += new System.EventHandler(this.addtoCart_Click);
             // 
+            // lblBookISBN
+            // 
+            this.lblBookISBN.AutoSize = true;
+            this.lblBookISBN.Location = new System.Drawing.Point(13, 185);
+            this.lblBookISBN.Name = "lblBookISBN";
+            this.lblBookISBN.Size = new System.Drawing.Size(70, 25);
+            this.lblBookISBN.TabIndex = 15;
+            this.lblBookISBN.Text = "label2";
+            // 
+            // lblBookPages
+            // 
+            this.lblBookPages.AutoSize = true;
+            this.lblBookPages.Location = new System.Drawing.Point(125, 185);
+            this.lblBookPages.Name = "lblBookPages";
+            this.lblBookPages.Size = new System.Drawing.Size(70, 25);
+            this.lblBookPages.TabIndex = 16;
+            this.lblBookPages.Text = "label2";
+            // 
+            // lblBoothAuthor
+            // 
+            this.lblBoothAuthor.AutoSize = true;
+            this.lblBoothAuthor.Location = new System.Drawing.Point(264, 185);
+            this.lblBoothAuthor.Name = "lblBoothAuthor";
+            this.lblBoothAuthor.Size = new System.Drawing.Size(70, 25);
+            this.lblBoothAuthor.TabIndex = 17;
+            this.lblBoothAuthor.Text = "label2";
+            // 
+            // lblBookQuantity
+            // 
+            this.lblBookQuantity.AutoSize = true;
+            this.lblBookQuantity.Location = new System.Drawing.Point(407, 185);
+            this.lblBookQuantity.Name = "lblBookQuantity";
+            this.lblBookQuantity.Size = new System.Drawing.Size(70, 25);
+            this.lblBookQuantity.TabIndex = 18;
+            this.lblBookQuantity.Text = "label2";
+            // 
+            // lblBookSubject
+            // 
+            this.lblBookSubject.AutoSize = true;
+            this.lblBookSubject.Location = new System.Drawing.Point(551, 185);
+            this.lblBookSubject.Name = "lblBookSubject";
+            this.lblBookSubject.Size = new System.Drawing.Size(70, 25);
+            this.lblBookSubject.TabIndex = 19;
+            this.lblBookSubject.Text = "label2";
+            // 
             // frmBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblBookSubject);
+            this.Controls.Add(this.lblBookQuantity);
+            this.Controls.Add(this.lblBoothAuthor);
+            this.Controls.Add(this.lblBookPages);
+            this.Controls.Add(this.lblBookISBN);
             this.Controls.Add(this.addtoCart);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.btBookReserve);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblSubjectBook);
             this.Controls.Add(this.lblQuantityBook);
@@ -188,9 +231,13 @@
         private System.Windows.Forms.Label lblQuantityBook;
         private System.Windows.Forms.Label lblSubjectBook;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btBookReserve;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button addtoCart;
+        private System.Windows.Forms.Label lblBookISBN;
+        private System.Windows.Forms.Label lblBookPages;
+        private System.Windows.Forms.Label lblBoothAuthor;
+        private System.Windows.Forms.Label lblBookQuantity;
+        private System.Windows.Forms.Label lblBookSubject;
     }
 }

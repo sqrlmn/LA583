@@ -14,7 +14,7 @@ namespace LibraryAssistantDAL
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
             MySqlCommand cmd = new MySqlCommand("SELECT username, returnTime FROM alerts WHERE date(returnTime)=@date and username=@username", conn);
-            string date = DateTime.Now.ToString("M/d/yyyy");
+            DateTime date = DateTime.Today;
             cmd.Parameters.Add(new MySqlParameter("@date", date));
             cmd.Parameters.Add(new MySqlParameter("@username", username));
             conn.Open();

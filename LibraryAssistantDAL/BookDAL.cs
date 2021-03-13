@@ -23,12 +23,16 @@ namespace LibraryAssistantDAL
         public bool ReturnBookDAL(string username, string isbn)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            MySqlCommand cmd = new MySqlCommand("DELETE FROM borrows WHERE borrowID = @username and bISBN = @isbn");
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM borrows WHERE borrowID = @username and bISBN = @isbn", conn);
+            cmd.Parameters.Add(new MySqlParameter("@username", username));
+            cmd.Parameters.Add(new MySqlParameter("@isbn", isbn));
             conn.Open();
-            int rowAffected = cmd.ExecuteNonQuery();
-            conn.Close();
-            if (rowAffected > 0)
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
             {
+                conn.Close();
+                dr.Close();
                 return true;
             }
             else
