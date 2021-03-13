@@ -114,7 +114,15 @@ namespace LibraryAssistant
         private void lblBookReturn_Click(object sender, EventArgs e)
         {
             AccountBL lbAccount = new AccountBL();
-
+            bool Actype = lbAccount.GetUserTypeBL(username);
+            if (Actype == true)
+            {
+                lblBookReturn.Show();
+            }
+            else
+            {
+                lblBookReturn.Hide();
+            }
         }
     }
 }

@@ -167,3 +167,4 @@ C:\Users\travis.cripe\Desktop\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.
 C:\Users\travis.cripe\Desktop\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.exe
 C:\Users\travis.cripe\Desktop\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.pdb
 C:\Users\travis.cripe\Desktop\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.frmCarts.resources
+C:\Users\travis.cripe\Desktop\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.frmBookReturn.resources
