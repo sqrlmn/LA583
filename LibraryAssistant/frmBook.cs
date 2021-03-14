@@ -16,6 +16,7 @@ namespace LibraryAssistant
         public string Username;
         string quantity;
         string isbn;
+        public bool userType;
 
         public frmBook(string isbn, string title, string author, string subject, string pages, string quantity, string rating)
         {
@@ -34,7 +35,12 @@ namespace LibraryAssistant
 
         private void frmBook_Load(object sender, EventArgs e)
         {
-
+            if (userType)
+            {
+                btnAddToCart.Enabled = false;
+                btnReserveBook.Enabled = false;
+                cbxRating.Enabled = false;
+            }
         }
 
         private void btBookReserve_Click(object sender, EventArgs e)

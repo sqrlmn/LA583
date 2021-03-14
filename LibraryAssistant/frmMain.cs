@@ -19,6 +19,7 @@ namespace LibraryAssistant
         }
 
         public string username;
+        public bool type;
 
         //VARIABLES USED TO STORE BOOK GRID VIEW CLICK ROW HEADER EVENT
         public static string BookISBN;
@@ -59,7 +60,7 @@ namespace LibraryAssistant
             AccountBL accountBl = new AccountBL();
             string firstName = accountBl.GetUserFirstNameBL(username);
             string lastName = accountBl.GetUserLastNameBL(username);
-            bool type = accountBl.GetUserTypeBL(username);
+            type = accountBl.GetUserTypeBL(username);
             lblFullname.Text = firstName + " " + lastName;
             AlertBL alertBL = new AlertBL();
             alertBL.GetAlertUserBL(username);
@@ -68,6 +69,8 @@ namespace LibraryAssistant
             {
                 lblAccountType.Text = "Librarian";
                 lblBookReturn.Show();
+                lblViewCart.Hide();
+                lblCheckout.Hide();
             }
             else
             {
@@ -104,6 +107,7 @@ namespace LibraryAssistant
             string rating = dgvSearch.Rows[row].Cells[6].Value.ToString();
             frmBook fBook = new frmBook(isbn, title, author, subject, pages, quantity, rating);
             fBook.Username = username;
+            fBook.userType = type;
             fBook.ShowDialog();
         }
 
