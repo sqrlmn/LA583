@@ -17,6 +17,7 @@ namespace LibraryAssistant
         string quantity;
         string isbn;
         public bool userType;
+        int rate;
 
         public frmBook(string isbn, string title, string author, string subject, string pages, string quantity, string rating)
         {
@@ -40,7 +41,10 @@ namespace LibraryAssistant
                 btnAddToCart.Enabled = false;
                 btnReserveBook.Enabled = false;
                 cbxRating.Enabled = false;
+                displaystarcombobox();
+
             }
+            displaystarcombobox();
         }
 
         private void btBookReserve_Click(object sender, EventArgs e)
@@ -66,6 +70,24 @@ namespace LibraryAssistant
             CartsBL carts = new CartsBL();
             bool truthstatement = carts.createCartsBL(Username, isbn);
             MessageBox.Show("Book added to cart!");
+        }
+        private void displaystarcombobox()
+        {
+            for (int i = 1; i <= 5; i++)
+            {
+                cbxRating.Items.Add(i);
+            }
+        }
+
+        private void ratebtn_Click(object sender, EventArgs e)
+        {
+            BookBL book = new BookBL();
+            if ((cbxRating.SelectedItem) != null)
+            {
+                rate = (int)cbxRating.SelectedItem;
+                book.UpdatebookRateBL(isbn, rate);
+                MessageBox.Show("Thank you for rating " + lblBookTitle.Text + " as a " + rate + " out of 5");
+            }
         }
     }
 }
