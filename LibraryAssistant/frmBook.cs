@@ -26,19 +26,15 @@ namespace LibraryAssistant
             lblBookQuantity.Text = quantity;
             lblBookSubject.Text = subject;
             lblBookTitle.Text = title;
+            lblBookRating.Text = rating;
             this.quantity = quantity;
             this.isbn = isbn;
             Refresh();
-            
         }
 
         private void frmBook_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
         }
 
         private void btBookReserve_Click(object sender, EventArgs e)

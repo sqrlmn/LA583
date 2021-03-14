@@ -44,6 +44,7 @@
             this.lblBoothAuthor = new System.Windows.Forms.Label();
             this.lblBookQuantity = new System.Windows.Forms.Label();
             this.lblBookSubject = new System.Windows.Forms.Label();
+            this.lblBookRating = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -118,7 +119,7 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Rating";
             // 
-            // button1
+            // btBookReserve
             // 
             this.btBookReserve.Location = new System.Drawing.Point(147, 377);
             this.btBookReserve.Name = "btBookReserve";
@@ -192,11 +193,21 @@
             this.lblBookSubject.TabIndex = 19;
             this.lblBookSubject.Text = "label2";
             // 
+            // lblRating
+            // 
+            this.lblBookRating.AutoSize = true;
+            this.lblBookRating.Location = new System.Drawing.Point(692, 185);
+            this.lblBookRating.Name = "lblRating";
+            this.lblBookRating.Size = new System.Drawing.Size(70, 25);
+            this.lblBookRating.TabIndex = 20;
+            this.lblBookRating.Text = "label2";
+            // 
             // frmBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblBookRating);
             this.Controls.Add(this.lblBookSubject);
             this.Controls.Add(this.lblBookQuantity);
             this.Controls.Add(this.lblBoothAuthor);
@@ -239,5 +250,6 @@
         private System.Windows.Forms.Label lblBoothAuthor;
         private System.Windows.Forms.Label lblBookQuantity;
         private System.Windows.Forms.Label lblBookSubject;
+        private System.Windows.Forms.Label lblBookRating;
     }
 }

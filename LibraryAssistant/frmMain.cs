@@ -73,17 +73,27 @@ namespace LibraryAssistant
             {
                 lblAccountType.Text = "User";
                 lblBookReturn.Hide();
+                btnAdd.Hide();
+                btnEdit.Hide();
+                btnRemove.Hide();
             }
         }
 
         private void dgvSearch_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            dgvSearch.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            rowIndex = e.RowIndex;
+            try
+            {
+                rISBN = dgvSearch.Rows[rowIndex].Cells[0].Value.ToString();
+                rBookTitle = dgvSearch.Rows[rowIndex].Cells[1].Value.ToString();
+            }
+            catch { };
         }
 
         private void dgvSearch_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             dgvSearch.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            int column = e.ColumnIndex;
             int row = e.RowIndex;
             string isbn = dgvSearch.Rows[row].Cells[0].Value.ToString();
             string title = dgvSearch.Rows[row].Cells[1].Value.ToString();
@@ -94,7 +104,7 @@ namespace LibraryAssistant
             string rating = dgvSearch.Rows[row].Cells[6].Value.ToString();
             frmBook fBook = new frmBook(isbn, title, author, subject, pages, quantity, rating);
             fBook.Username = username;
-            fBook.Show();
+            fBook.ShowDialog();
         }
 
         private void lblEditAccount_Click(object sender, EventArgs e)
@@ -131,6 +141,41 @@ namespace LibraryAssistant
             Random rnd_id = new Random();
             int alert_id = rnd_id.Next(1, 1000);
             newReturnAlert.SetAlertReturnBL(username, alert_id, expiryDate.ToString());
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public string rISBN;
+        public string rBookTitle;
+        public int rowIndex;
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            BookBL bookBl = new BookBL();
+            try
+            {
+                DialogResult dialogResult = MessageBox.Show("Do you want to remove "+ rBookTitle +"?", "Remove a book", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    dgvSearch.Rows.RemoveAt(rowIndex);
+                    bookBl.RemoveBookBL(rISBN);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    // do nothing
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Please click on a book to remove it.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
