@@ -23,18 +23,33 @@ namespace LibraryAssistantBL
             bool ds = bookDal.ReturnBookDAL(username, isbn);
             return ds;
         }
+
         public bool RemoveBookBL(string ISBN)
         {
             BookDAL bookDal = new BookDAL();
             bool ds = bookDal.RemoveBookByISBNDAL(ISBN);
             return ds;
         }
-        public bool AddBookBL(string ISBN, string title, string author, int quantity, float price, string subject, int available, string book_condition)
+
+        public bool AddBookBL(string ISBN, string title, string author, int quantity, double price, string subject, int pageCount)
         {
             BookDAL bookDal = new BookDAL();
-            bool ds = bookDal.AddBookDAL(ISBN, title, author, quantity, price, subject, available, book_condition);
+            bool ds = bookDal.AddBookDAL(ISBN, title, author, quantity, price, subject, pageCount);
             return ds;
+        }
 
+        public bool CheckISBNBL(string ISBN)
+        {
+            BookDAL bookDal = new BookDAL();
+            bool result = bookDal.CheckISBNDAL(ISBN);
+            return result;
+        }
+
+        public bool EditBookBL(string ISBN, string title, string author, int quantity, double price, string subject, int pageCount, int available, string currentISBN)
+        {
+            BookDAL bookDal = new BookDAL();
+            bool ds = bookDal.EditBookDAL(ISBN, title, author, quantity, price, subject, pageCount, available, currentISBN);
+            return ds;
         }
     }
 }

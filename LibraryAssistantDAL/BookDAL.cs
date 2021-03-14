@@ -59,19 +59,66 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
-        public bool AddBookDAL(string ISBN, string title, string author, int quantity, float price, string subject, int available, string book_condition)
+        public bool AddBookDAL(string ISBN, string title, string author, int quantity, double price, string subject, int pageCount)
         {
 
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO books (ISBN, title, author,quantity,price,subject,available,bookCondition) VALUES(@ISBN, @title, @author, @quantity, @price, @subject, @available,@book_condition)", conn);
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO books (ISBN, title, author, quantity, price, subject, available, pageCount, reviewCount, starCount) VALUES(@ISBN, @title, @author, @quantity, @price, @subject, @quantity, @pageCount, 0, 0)", conn);
             cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
             cmd.Parameters.Add(new MySqlParameter("@title", title));
             cmd.Parameters.Add(new MySqlParameter("@author", author));
             cmd.Parameters.Add(new MySqlParameter("@quantity", quantity));
             cmd.Parameters.Add(new MySqlParameter("@price", price));
             cmd.Parameters.Add(new MySqlParameter("@subject", subject));
-            cmd.Parameters.Add(new MySqlParameter("@avialable", available));
-            cmd.Parameters.Add(new MySqlParameter("@book_condition", book_condition));
+            cmd.Parameters.Add(new MySqlParameter("@pageCount", pageCount));
+
+            conn.Open();
+            int rowAffected = cmd.ExecuteNonQuery();
+            conn.Close();
+            if (rowAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool CheckISBNDAL(string ISBN)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("SELECT ISBN FROM books WHERE ISBN=@ISBN", conn);
+            cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
+            conn.Open();
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                conn.Close();
+                dr.Close();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool EditBookDAL(string ISBN, string title, string author, int quantity, double price, string subject, int pageCount, int available, string currentISBN)
+        {
+
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("UPDATE books SET ISBN = @ISBN, title = @title, pageCount = @pageCount, author = @author, quantity = @quantity, price = @price, subject = @subject, available = @available WHERE(ISBN = @currentISBN)", conn);
+            cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
+            cmd.Parameters.Add(new MySqlParameter("@title", title));
+            cmd.Parameters.Add(new MySqlParameter("@author", author));
+            cmd.Parameters.Add(new MySqlParameter("@quantity", quantity));
+            cmd.Parameters.Add(new MySqlParameter("@price", price));
+            cmd.Parameters.Add(new MySqlParameter("@subject", subject));
+            cmd.Parameters.Add(new MySqlParameter("@pageCount", pageCount));
+            cmd.Parameters.Add(new MySqlParameter("@available", available));
+            cmd.Parameters.Add(new MySqlParameter("@currentISBN", currentISBN));
 
             conn.Open();
             int rowAffected = cmd.ExecuteNonQuery();
@@ -86,5 +133,4 @@ namespace LibraryAssistantDAL
             }
         }
     }
-    
 }
