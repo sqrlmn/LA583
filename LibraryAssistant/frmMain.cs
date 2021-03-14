@@ -141,7 +141,14 @@ namespace LibraryAssistant
         private void checkout_Click(object sender, EventArgs e)
         {
             CartsBL carts = new CartsBL();
-            bool truthstatement = carts.removeCartsbyusername(username);
+            if (carts.removeCartsbyusername(username))
+            {
+                MessageBox.Show("You are already checkout...", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("There is an error...", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             AlertBL newReturnAlert = new AlertBL();
             DateTime today = DateTime.Today;
             DateTime expiryDate = today.AddDays(15);
