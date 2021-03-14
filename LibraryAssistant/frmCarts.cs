@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryAssistantBL;
 
 namespace LibraryAssistant
 {
     public partial class frmCarts : Form
     {
-        public frmCarts(string username)
+        public frmCarts(string username, string ISBN)
         {
+
             InitializeComponent();
+            CartsBL carts = new CartsBL();
+            DataSet ds = carts.getCartsbyUsername(username);
+            dataGridView1.DataSource = ds.Tables[0];
         }
     }
 }
