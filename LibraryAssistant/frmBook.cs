@@ -70,9 +70,16 @@ namespace LibraryAssistant
             }
         }
 
-        private void rateBtn_Click(object sender, EventArgs e)
+       
+
+        private void ratebtn_Click_1(object sender, EventArgs e)
         {
-            BookBL carts = new BookBL();
+            BookBL book = new BookBL();
+            if ((comboBox1.SelectedItem) != null)
+            {
+                rate = (int)comboBox1.SelectedItem;
+                book.UpdatebookRateBL(isbn, rate);
+            }
         }
     }
 }

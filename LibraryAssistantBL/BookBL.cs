@@ -36,5 +36,11 @@ namespace LibraryAssistantBL
             return ds;
 
         }
+        public void UpdatebookRateBL(string ISBN, int starcount)
+        {
+            BookDAL bookDal = new BookDAL();
+            bookDal.updateBookreviewDAL(ISBN, starcount);
+
+        }
     }
 }

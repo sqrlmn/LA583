@@ -85,6 +85,39 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
+        public void updateBookreviewDAL(string ISBN,int starcount)
+            {
+                MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+                //MySqlConnection conn2 = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+                //MySqlConnection conn3 = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+
+                MySqlCommand cmd = new MySqlCommand("SELECT reviewCount FROM books WHERE ISBN = @ISBN", conn);
+                MySqlCommand cmd2 = new MySqlCommand("SELECT starCount FROM books WHERE ISBN = @ISBN", conn);
+
+                cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
+                cmd2.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
+
+                conn.Open();
+                string rc = cmd.ExecuteScalar().ToString();
+                int brc = Int32.Parse(rc);
+                conn.Close();
+
+                conn.Open();
+                string sc = cmd2.ExecuteScalar().ToString();
+                int bsc = Int32.Parse(sc);
+                conn.Close();
+
+                MySqlCommand cmd3 = new MySqlCommand("UPDATE books SET reviewCount = @rc AND starCount = @sc WHERE ISBN = @ISBN", conn);
+                cmd3.Parameters.Add(new MySqlParameter("@rc", brc + 1));
+                cmd3.Parameters.Add(new MySqlParameter("@sc", bsc + starcount));
+                cmd3.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
+
+            conn.Open();
+                cmd3.ExecuteNonQuery();
+                conn.Close();
+            }
+
+        
         
     }
     
