@@ -36,9 +36,9 @@
             this.lblQuantityBook = new System.Windows.Forms.Label();
             this.lblSubjectBook = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btBookReserve = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.addtoCart = new System.Windows.Forms.Button();
+            this.btnReserveBook = new System.Windows.Forms.Button();
+            this.cbxRating = new System.Windows.Forms.ComboBox();
+            this.btnAddToCart = new System.Windows.Forms.Button();
             this.lblBookISBN = new System.Windows.Forms.Label();
             this.lblBookPages = new System.Windows.Forms.Label();
             this.lblBoothAuthor = new System.Windows.Forms.Label();
@@ -119,34 +119,34 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Rating";
             // 
-            // btBookReserve
+            // btnReserveBook
             // 
-            this.btBookReserve.Location = new System.Drawing.Point(147, 377);
-            this.btBookReserve.Name = "btBookReserve";
-            this.btBookReserve.Size = new System.Drawing.Size(249, 56);
-            this.btBookReserve.TabIndex = 12;
-            this.btBookReserve.Text = "Reserve Book";
-            this.btBookReserve.UseVisualStyleBackColor = true;
-            this.btBookReserve.Click += new System.EventHandler(this.btBookReserve_Click);
+            this.btnReserveBook.Location = new System.Drawing.Point(147, 377);
+            this.btnReserveBook.Name = "btnReserveBook";
+            this.btnReserveBook.Size = new System.Drawing.Size(249, 56);
+            this.btnReserveBook.TabIndex = 12;
+            this.btnReserveBook.Text = "Reserve Book";
+            this.btnReserveBook.UseVisualStyleBackColor = true;
+            this.btnReserveBook.Click += new System.EventHandler(this.btBookReserve_Click);
             // 
-            // comboBox1
+            // cbxRating
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(696, 252);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(67, 33);
-            this.comboBox1.TabIndex = 13;
+            this.cbxRating.FormattingEnabled = true;
+            this.cbxRating.Location = new System.Drawing.Point(696, 252);
+            this.cbxRating.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxRating.Name = "cbxRating";
+            this.cbxRating.Size = new System.Drawing.Size(67, 33);
+            this.cbxRating.TabIndex = 13;
             // 
-            // addtoCart
+            // btnAddToCart
             // 
-            this.addtoCart.Location = new System.Drawing.Point(430, 377);
-            this.addtoCart.Name = "addtoCart";
-            this.addtoCart.Size = new System.Drawing.Size(249, 56);
-            this.addtoCart.TabIndex = 14;
-            this.addtoCart.Text = "Add to Cart";
-            this.addtoCart.UseVisualStyleBackColor = true;
-            this.addtoCart.Click += new System.EventHandler(this.addtoCart_Click);
+            this.btnAddToCart.Location = new System.Drawing.Point(430, 377);
+            this.btnAddToCart.Name = "btnAddToCart";
+            this.btnAddToCart.Size = new System.Drawing.Size(249, 56);
+            this.btnAddToCart.TabIndex = 14;
+            this.btnAddToCart.Text = "Add to Cart";
+            this.btnAddToCart.UseVisualStyleBackColor = true;
+            this.btnAddToCart.Click += new System.EventHandler(this.addtoCart_Click);
             // 
             // lblBookISBN
             // 
@@ -193,11 +193,11 @@
             this.lblBookSubject.TabIndex = 19;
             this.lblBookSubject.Text = "label2";
             // 
-            // lblRating
+            // lblBookRating
             // 
             this.lblBookRating.AutoSize = true;
             this.lblBookRating.Location = new System.Drawing.Point(692, 185);
-            this.lblBookRating.Name = "lblRating";
+            this.lblBookRating.Name = "lblBookRating";
             this.lblBookRating.Size = new System.Drawing.Size(70, 25);
             this.lblBookRating.TabIndex = 20;
             this.lblBookRating.Text = "label2";
@@ -213,9 +213,9 @@
             this.Controls.Add(this.lblBoothAuthor);
             this.Controls.Add(this.lblBookPages);
             this.Controls.Add(this.lblBookISBN);
-            this.Controls.Add(this.addtoCart);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.btBookReserve);
+            this.Controls.Add(this.btnAddToCart);
+            this.Controls.Add(this.cbxRating);
+            this.Controls.Add(this.btnReserveBook);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblSubjectBook);
             this.Controls.Add(this.lblQuantityBook);
@@ -242,9 +242,9 @@
         private System.Windows.Forms.Label lblQuantityBook;
         private System.Windows.Forms.Label lblSubjectBook;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btBookReserve;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button addtoCart;
+        private System.Windows.Forms.Button btnReserveBook;
+        private System.Windows.Forms.ComboBox cbxRating;
+        private System.Windows.Forms.Button btnAddToCart;
         private System.Windows.Forms.Label lblBookISBN;
         private System.Windows.Forms.Label lblBookPages;
         private System.Windows.Forms.Label lblBoothAuthor;
