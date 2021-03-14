@@ -16,7 +16,7 @@ namespace LibraryAssistantBL
             return isDone;
         }
 
-        public bool SetAlertReturnBL(string username, int alertID, DateTime returnTime)
+        public bool SetAlertReturnBL(string username, int alertID, string returnTime)
         {
             AlertDAL alertDal = new AlertDAL();
             bool isDone = alertDal.SetAlertReturnDAL(username, alertID, returnTime);

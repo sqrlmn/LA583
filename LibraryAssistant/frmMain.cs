@@ -62,6 +62,7 @@ namespace LibraryAssistant
             bool type = accountBl.GetUserTypeBL(username);
             lblFullname.Text = firstName + " " + lastName;
             AlertBL alertBL = new AlertBL();
+            alertBL.GetAlertUserBL(username);
 
             if (type)
             {
@@ -72,10 +73,6 @@ namespace LibraryAssistant
             {
                 lblAccountType.Text = "User";
                 lblBookReturn.Hide();
-                if (alertBL.GetAlertUserBL(username))
-                {
-                    MessageBox.Show("You have an book due today!");
-                }
             }
         }
 
@@ -130,10 +127,10 @@ namespace LibraryAssistant
             bool truthstatement = carts.removeCartsbyusername(username);
             AlertBL newReturnAlert = new AlertBL();
             DateTime today = DateTime.Today;
-            DateTime expiryDate = today.AddDays(15);
+            DateTime expiryDate = today.AddDays(30);
             Random rnd_id = new Random();
             int alert_id = rnd_id.Next(1, 1000);
-            newReturnAlert.SetAlertReturnBL(username, alert_id, expiryDate);
+            newReturnAlert.SetAlertReturnBL(username, alert_id, expiryDate.ToString());
         }
     }
 }
