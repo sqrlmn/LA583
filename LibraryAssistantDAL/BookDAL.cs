@@ -132,5 +132,43 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
+        public void updateBookreviewDAL(string ISBN, int starcount)
+        {
+            int rc = GetReviewCountDAL(ISBN);
+            int sc = GetstarCountDAL(ISBN);
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+
+            MySqlCommand cmd3 = new MySqlCommand("UPDATE books SET reviewCount = @rc, starCount = @sc WHERE ISBN = @ISBN", conn);
+            cmd3.Parameters.Add(new MySqlParameter("@rc", rc + 1));
+            cmd3.Parameters.Add(new MySqlParameter("@sc", sc + starcount));
+            cmd3.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
+
+            conn.Open();
+            cmd3.ExecuteNonQuery();
+            conn.Close();
+        }
+        public int GetReviewCountDAL(string ISBN)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("SELECT reviewCount FROM books WHERE ISBN = @ISBN", conn);
+            cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
+            conn.Open();
+            string rc = cmd.ExecuteScalar().ToString();
+            int brc = Int32.Parse(rc);
+            conn.Close();
+            return brc;
+
+        }
+        public int GetstarCountDAL(string ISBN)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("SELECT starCount FROM books WHERE ISBN = @ISBN", conn);
+            cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
+            conn.Open();
+            string sc = cmd.ExecuteScalar().ToString();
+            int bsc = Int32.Parse(sc);
+            conn.Close();
+            return bsc;
+        }
     }
 }
