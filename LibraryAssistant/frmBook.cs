@@ -38,6 +38,7 @@ namespace LibraryAssistant
         {
             if (userType)
             {
+                ratebtn.Enabled = false;
                 btnAddToCart.Enabled = false;
                 btnReserveBook.Enabled = false;
                 cbxRating.Enabled = false;
@@ -87,7 +88,13 @@ namespace LibraryAssistant
                 rate = (int)cbxRating.SelectedItem;
                 book.UpdatebookRateBL(isbn, rate);
                 MessageBox.Show("Thank you for rating " + lblBookTitle.Text + " as a " + rate + " out of 5");
+                ratebtn.Enabled = false;
             }
+        }
+
+        private void cbxRating_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
         }
     }
 }
