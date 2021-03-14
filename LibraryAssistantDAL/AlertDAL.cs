@@ -14,34 +14,34 @@ namespace LibraryAssistantDAL
         {
 
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;Convert Zero Datetime=True;");
-            MySqlCommand cmd = new MySqlCommand("SELECT returnTime FROM alerts WHERE returnTime=@date and username=@username", conn);
-            DateTime date = DateTime.Today;
-            cmd.Parameters.Add(new MySqlParameter("@date", date));
+            MySqlCommand cmd = new MySqlCommand("SELECT returnTime FROM alerts WHERE returnTime=@date and username=@username", conn); // getting the return date of books that the user has checked out
+            DateTime date = DateTime.Today; // todays date
+            cmd.Parameters.Add(new MySqlParameter("@date", date)); 
             cmd.Parameters.Add(new MySqlParameter("@username", username));
             conn.Open();
             try
             {
-                DateTime sql_date = (DateTime)cmd.ExecuteScalar();
+                DateTime sql_date = (DateTime)cmd.ExecuteScalar(); // getting the date from the database if possible
                 if (date == sql_date)
                 {
                     conn.Close();
                     return true;
                 }
-                return false;
+                return false; // if the date does not match todays date it returns false
             }
             catch
             {
-                return false;
+                return false; // if no object exists it returns false
             }
         }
 
         public bool GetBookAvailableDAL(string username)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            MySqlCommand cmd = new MySqlCommand("SELECT username, bookavailable FROM alerts WHERE bookAvailable > 0 and username=@username", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT username, bookavailable FROM alerts WHERE bookAvailable > 0 and username=@username", conn); // grabbing username of user reserving book and finding the amount of books available
             cmd.Parameters.Add(new MySqlParameter("@username", username));
             conn.Open();
-            MySqlDataReader alertCheck = cmd.ExecuteReader();
+            MySqlDataReader alertCheck = cmd.ExecuteReader(); // checking if there is data
             if (alertCheck.Read())
             {
                 conn.Close();
@@ -54,19 +54,19 @@ namespace LibraryAssistantDAL
             }
         }
 
-        public bool SetAlertReturnDAL(string username, int alertID, string returnTime)
+        public bool SetAlertReturnDAL(string username, int alertID, DateTime returnTime)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            string query = "INSERT INTO alerts (alertID, username, returnTime)";
-            query += " Values (@alertID, @username, @returnTime)";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
+            string query = "INSERT INTO alerts (alertID, username, returnTime)"; // setting values of the database to set book return date
+            query += " Values (@alertID, @username, @returnTime)"; // the agruments passed into the function being set to database
+            MySqlCommand cmd = new MySqlCommand(query, conn); // send command
             cmd.Parameters.Add(new MySqlParameter("@alertID", alertID));
             cmd.Parameters.Add(new MySqlParameter("@username", username));
             cmd.Parameters.Add(new MySqlParameter("@returnTime", returnTime));
             conn.Open();
             MySqlDataReader dr = cmd.ExecuteReader();
 
-            if (dr.Read())
+            if (dr.Read()) // make sure data is to be read
             {
                 conn.Close();
                 dr.Close();
@@ -81,8 +81,8 @@ namespace LibraryAssistantDAL
        public bool SetAlertBookAvailableDAL(string username, int bookAvailable, int alertID, string bookname)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;Convert Zero Datetime=True;");
-            string query = "INSERT INTO alerts (alertID, username, bookAvailable, conent)";
-            query += " Values (@alertID, @username, @bookAvailable, @content)";
+            string query = "INSERT INTO alerts (alertID, username, bookAvailable, conent)"; // setting values of the database to set book return date
+            query += " Values (@alertID, @username, @bookAvailable, @content)"; // the agruments passed into the function being set to database
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.Add(new MySqlParameter("@alertID", alertID));
             cmd.Parameters.Add(new MySqlParameter("@username", username));
@@ -104,7 +104,7 @@ namespace LibraryAssistantDAL
         public bool UpdateBookAvailableDAL(string username)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            MySqlCommand cmd = new MySqlCommand("SELECT alerts FROM accounts WHERE username=@username ", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT alerts FROM accounts WHERE username=@username ", conn); // cheking if book available
             cmd.Parameters.Add(new MySqlParameter("@username", username));
             conn.Open();
             string phone = (string)cmd.ExecuteScalar();
