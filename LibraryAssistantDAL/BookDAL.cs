@@ -42,10 +42,10 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
-        public bool RemovebookbyISBNDAL(string ISBN)
+        public bool RemoveBookByISBNDAL(string ISBN)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            MySqlCommand cmd = new MySqlCommand("DELETE FROM books WHERE bookISBN = @ISBN", conn);
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM books WHERE ISBN = @ISBN", conn);
             cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
             conn.Open();
             int rowAffected = cmd.ExecuteNonQuery();

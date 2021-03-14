@@ -93,3 +93,4 @@ C:\Users\nghia.luong\source\repos\LA583\LibraryAssistantDAL\obj\Debug\LibraryAss
 C:\Users\nghia.luong\source\repos\LA583\LibraryAssistantDAL\obj\Debug\LibraryAssistantDAL.csproj.CopyComplete
 C:\Users\nghia.luong\source\repos\LA583\LibraryAssistantDAL\obj\Debug\LibraryAssistantDAL.dll
 C:\Users\nghia.luong\source\repos\LA583\LibraryAssistantDAL\obj\Debug\LibraryAssistantDAL.pdb
+C:\Users\nghia.luong\source\repos\LA583\LibraryAssistantDAL\obj\Debug\LibraryAssistantDAL.csprojAssemblyReference.cache

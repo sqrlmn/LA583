@@ -26,7 +26,7 @@ namespace LibraryAssistantBL
         public bool RemoveBookBL(string ISBN)
         {
             BookDAL bookDal = new BookDAL();
-            bool ds = bookDal.RemovebookbyISBNDAL(ISBN);
+            bool ds = bookDal.RemoveBookByISBNDAL(ISBN);
             return ds;
         }
         public bool AddBookBL(string ISBN, string title, string author, int quantity, float price, string subject, int available, string book_condition)
