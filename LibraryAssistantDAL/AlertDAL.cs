@@ -12,23 +12,27 @@ namespace LibraryAssistantDAL
     {
         public bool GetAlertUserReturnDAL(string username)
         {
-            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            MySqlCommand cmd = new MySqlCommand("SELECT username, returnTime FROM alerts WHERE date(returnTime)=@date and username=@username", conn);
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;Convert Zero Datetime=True;");
+            MySqlCommand cmd = new MySqlCommand("SELECT returnTime FROM alerts WHERE returnTime=@date and username=@username", conn);
             DateTime date = DateTime.Today;
             cmd.Parameters.Add(new MySqlParameter("@date", date));
             cmd.Parameters.Add(new MySqlParameter("@username", username));
             conn.Open();
-            MySqlDataReader alertCheck = cmd.ExecuteReader();
-            if (alertCheck.Read())
+            try
             {
-                conn.Close();
-                alertCheck.Close();
-                return true;
+                DateTime sql_date = (DateTime)cmd.ExecuteScalar();
+                if (date == sql_date)
+                {
+                    conn.Close();
+                    return true;
+                }
+                return false;
             }
-            else
+            catch
             {
                 return false;
             }
+
         }
 
         public bool GetBookAvailableDAL(string username)
@@ -50,9 +54,9 @@ namespace LibraryAssistantDAL
             }
         }
 
-        public bool SetAlertReturnDAL(string username, int alertID, string returnTime)
+        public bool SetAlertReturnDAL(string username, int alertID, DateTime returnTime)
         {
-            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;Convert Zero Datetime=True;");
             string query = "INSERT INTO alerts (alertID, username, returnTime)";
             query += " Values (@alertID, @username, @returnTime)";
             MySqlCommand cmd = new MySqlCommand(query, conn);

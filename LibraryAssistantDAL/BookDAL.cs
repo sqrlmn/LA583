@@ -23,11 +23,21 @@ namespace LibraryAssistantDAL
         public bool ReturnBookDAL(string username, string isbn)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            MySqlCommand cmd = new MySqlCommand("DELETE FROM borrows WHERE borrowID = @username and bISBN = @isbn", conn);
-            MySqlCommand bookAdd = new MySqlCommand("Update FROM books WHERE ISBN = @isbn and availability += 1", conn);
+
+            MySqlCommand cmd = new MySqlCommand("SELECT availability FROM books WHERE ISBN = @isbn", conn);
             cmd.Parameters.Add(new MySqlParameter("@username", username));
-            cmd.Parameters.Add(new MySqlParameter("@isbn", isbn));
+            conn.Open();
+            int avail = cmd.ExecuteNonQuery();
+            conn.Close();
+
+
+            MySqlCommand cmd2 = new MySqlCommand("DELETE FROM borrows WHERE borrowID = @username and bISBN = @isbn", conn);
+            MySqlCommand bookAdd = new MySqlCommand("UPDATE books SET  availability = @avail WHERE ISBN = @isbn", conn);
+            cmd2.Parameters.Add(new MySqlParameter("@username", username));
+            cmd2.Parameters.Add(new MySqlParameter("@isbn", isbn));
             bookAdd.Parameters.Add(new MySqlParameter("@isbn", isbn));
+            bookAdd.Parameters.Add(new MySqlParameter("@avail", avail + 1));
+
             conn.Open();
             MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -42,49 +52,5 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
-        public bool RemoveBookByISBNDAL(string ISBN)
-        {
-            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            MySqlCommand cmd = new MySqlCommand("DELETE FROM books WHERE ISBN = @ISBN", conn);
-            cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
-            conn.Open();
-            int rowAffected = cmd.ExecuteNonQuery();
-            conn.Close();
-            if (rowAffected > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        public bool AddBookDAL(string ISBN, string title, string author, int quantity, float price, string subject, int available, string book_condition)
-        {
-
-            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO books (ISBN, title, author,quantity,price,subject,available,bookCondition) VALUES(@ISBN, @title, @author, @quantity, @price, @subject, @available,@book_condition)", conn);
-            cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
-            cmd.Parameters.Add(new MySqlParameter("@title", title));
-            cmd.Parameters.Add(new MySqlParameter("@author", author));
-            cmd.Parameters.Add(new MySqlParameter("@quantity", quantity));
-            cmd.Parameters.Add(new MySqlParameter("@price", price));
-            cmd.Parameters.Add(new MySqlParameter("@subject", subject));
-            cmd.Parameters.Add(new MySqlParameter("@avialable", available));
-            cmd.Parameters.Add(new MySqlParameter("@book_condition", book_condition));
-
-            conn.Open();
-            int rowAffected = cmd.ExecuteNonQuery();
-            conn.Close();
-            if (rowAffected > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
     }
-    
 }
