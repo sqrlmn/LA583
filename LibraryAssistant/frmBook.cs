@@ -16,6 +16,7 @@ namespace LibraryAssistant
         public string Username;
         string quantity;
         string isbn;
+        int rate;
 
         public frmBook(string isbn, string title, string author, string subject, string pages, string quantity, string rating)
         {
@@ -34,7 +35,7 @@ namespace LibraryAssistant
 
         private void frmBook_Load(object sender, EventArgs e)
         {
-
+            displaystarcombobox();
         }
 
         private void btBookReserve_Click(object sender, EventArgs e)
@@ -60,6 +61,18 @@ namespace LibraryAssistant
             CartsBL carts = new CartsBL();
             bool truthstatement = carts.createCartsBL(Username, isbn);
             MessageBox.Show("Book added to cart!");
+        }
+        private void displaystarcombobox()
+        {
+            for (int i = 1; i <= 5; i++)
+            {
+                comboBox1.Items.Add(i);
+            }
+        }
+
+        private void rateBtn_Click(object sender, EventArgs e)
+        {
+            BookBL carts = new BookBL();
         }
     }
 }
