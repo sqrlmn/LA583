@@ -145,16 +145,28 @@ namespace LibraryAssistant
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            frmAddNewBook fAddNewBook = new frmAddNewBook();
+            fAddNewBook.isAdd = true;
+            fAddNewBook.ShowDialog();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            if (rISBN != null)
+            {
+                frmAddNewBook fAddNewBook = new frmAddNewBook();
+                fAddNewBook.Text = "Edit Book";
+                fAddNewBook.ISBN = rISBN;
+                fAddNewBook.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please click on a book to edit it.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
-        public string rISBN;
-        public string rBookTitle;
+        public string rISBN = null;
+        public string rBookTitle = null;
         public int rowIndex;
         private void btnRemove_Click(object sender, EventArgs e)
         {
