@@ -78,16 +78,16 @@ namespace LibraryAssistantDAL
             }
         }
 
-       public bool SetAlertBookAvailableDAL(string username, int bookAvailable, int alertID, string bookname)
+        public bool SetAlertBookAvailableDAL(string username, int bookAvailable, int alertID, string bookname)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;Convert Zero Datetime=True;");
-            string query = "INSERT INTO alerts (alertID, username, bookAvailable, conent)"; // setting values of the database to set book return date
-            query += " Values (@alertID, @username, @bookAvailable, @content)"; // the agruments passed into the function being set to database
+            string query = "INSERT INTO alerts (alertID, username, bookAvailable)"; // setting values of the database to set book return date
+            query += " Values (@alertID, @username, @bookAvailable)"; // the agruments passed into the function being set to database
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.Add(new MySqlParameter("@alertID", alertID));
             cmd.Parameters.Add(new MySqlParameter("@username", username));
             cmd.Parameters.Add(new MySqlParameter("@bookAvailable", bookAvailable));
-            cmd.Parameters.Add(new MySqlParameter("@content", bookname));
+            //cmd.Parameters.Add(new MySqlParameter("@content", bookname));
             conn.Open();
             int rowAffected = cmd.ExecuteNonQuery();
             conn.Close();

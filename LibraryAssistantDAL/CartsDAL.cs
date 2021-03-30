@@ -74,7 +74,7 @@ namespace LibraryAssistantDAL
         public bool RemoveCartsbyISBN(string username, string ISBN)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            MySqlCommand cmd = new MySqlCommand("DELETE FROM carts WHERE accountsUsername = @username, bookISBN = @ISBN", conn);
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM carts WHERE accountsUsername = @username and bookISBN = @ISBN", conn);
             cmd.Parameters.Add(new MySqlParameter("@username", username));
             cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
             conn.Open();
