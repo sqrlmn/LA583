@@ -32,7 +32,7 @@ namespace LibraryAssistant
                     AccountBL accountBl = new AccountBL();
                     if (!accountBl.CheckUsernameBL(txtUsername.Text))
                     {
-                        if (accountBl.CreateNewAccountBL(txtUsername.Text, accountBl.GenerateSHA512String(txtPassword.Text), "0", txtFirstName.Text, txtLastName.Text, txtEmail.Text, rtbAddress.Text, mtbPhone.Text))
+                        if (accountBl.CreateNewAccountBL(txtUsername.Text, txtPassword.Text, "0", txtFirstName.Text, txtLastName.Text, txtEmail.Text, rtbAddress.Text, mtbPhone.Text))
                         {
                             this.Close();
                         }

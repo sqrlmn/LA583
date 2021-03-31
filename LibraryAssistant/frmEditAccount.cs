@@ -103,13 +103,13 @@ namespace LibraryAssistant
             switch (type)
             {
                 case 0:
-                    if (accountBl.LoginBL(username, accountBl.GenerateSHA512String(txtInformation1.Text)))
+                    if (accountBl.LoginBL(username, txtInformation1.Text))
                     {
                         if (txtInformation3.Text != "" && txtInformation4.Text != "")
                         {
                             if (txtInformation3.Text == txtInformation4.Text)
                             {
-                                if (accountBl.UpdateUserPasswordBL(username, accountBl.GenerateSHA512String(txtInformation3.Text)))
+                                if (accountBl.UpdateUserPasswordBL(username, txtInformation3.Text))
                                 {
                                     this.Close();
                                 }
