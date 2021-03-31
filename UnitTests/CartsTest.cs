@@ -57,7 +57,6 @@ namespace UnitTests
             CartsDAL cartDal = new CartsDAL();
             var username = "b";
             var isbn = "3";
-            var id = 2;
             var result = cartDal.RemoveCartsbyISBN(username, isbn);
             Assert.IsFalse(result);
         }

@@ -29,7 +29,6 @@ namespace UnitTests
             var result = testbook.AddBookDAL(isbn, title,author, quantity, price, subject, pagecount);
             Assert.IsTrue(result);
             var remove = testbook.RemoveBookByISBNDAL(isbn);
-
         }
         [TestMethod]
         public void TestRemoveBook()
@@ -46,7 +45,6 @@ namespace UnitTests
             var createbook = testbook.AddBookDAL(isbn, title, author, quantity, price, subject, pagecount);
             var result = testbook.RemoveBookByISBNDAL("99");
             Assert.IsTrue(result);
-
         }
         
 
@@ -84,7 +82,6 @@ namespace UnitTests
             var isbn = "1";
             var result = testbook.GetstarCountDAL(isbn);
             Assert.AreEqual(19, result);
-
         }
 
 

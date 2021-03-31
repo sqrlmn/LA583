@@ -24,7 +24,7 @@ namespace LibraryAssistant
             if (txtUsername.Text != string.Empty && txtPassword.Text != string.Empty)
             {
                 AccountBL accountBl = new AccountBL();
-                bool isDone = accountBl.LoginBL(txtUsername.Text, accountBl.GenerateSHA512String(txtPassword.Text));
+                bool isDone = accountBl.LoginBL(txtUsername.Text, txtPassword.Text);
                 if (isDone)
                 {
                     frmMain fMain = new frmMain();
