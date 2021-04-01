@@ -45,3 +45,4 @@ C:\Users\nghia.luong\source\repos\LA583\UnitTests\obj\Debug\UnitTests.csproj.Cor
 C:\Users\nghia.luong\source\repos\LA583\UnitTests\obj\Debug\UnitTests.csproj.CopyComplete
 C:\Users\nghia.luong\source\repos\LA583\UnitTests\obj\Debug\UnitTests.dll
 C:\Users\nghia.luong\source\repos\LA583\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\nghia.luong\source\repos\LA583\UnitTests\bin\Debug\UnitTests.dll.config
