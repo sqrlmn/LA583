@@ -42,6 +42,7 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
+
         public bool RemoveBookByISBNDAL(string ISBN)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
@@ -59,9 +60,9 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
+
         public bool AddBookDAL(string ISBN, string title, string author, int quantity, double price, string subject, int pageCount)
         {
-
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
             MySqlCommand cmd = new MySqlCommand("INSERT INTO books (ISBN, title, author, quantity, price, subject, available, pageCount, reviewCount, starCount) VALUES(@ISBN, @title, @author, @quantity, @price, @subject, @quantity, @pageCount, 0, 0)", conn);
             cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
@@ -107,7 +108,6 @@ namespace LibraryAssistantDAL
 
         public bool EditBookDAL(string ISBN, string title, string author, int quantity, double price, string subject, int pageCount, int available, string currentISBN)
         {
-
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
             MySqlCommand cmd = new MySqlCommand("UPDATE books SET ISBN = @ISBN, title = @title, pageCount = @pageCount, author = @author, quantity = @quantity, price = @price, subject = @subject, available = @available WHERE(ISBN = @currentISBN)", conn);
             cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
@@ -132,6 +132,7 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
+
         public void updateBookreviewDAL(string ISBN, int starcount)
         {
             int rc = GetReviewCountDAL(ISBN);
@@ -147,6 +148,7 @@ namespace LibraryAssistantDAL
             cmd3.ExecuteNonQuery();
             conn.Close();
         }
+
         public int GetReviewCountDAL(string ISBN)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
@@ -157,8 +159,8 @@ namespace LibraryAssistantDAL
             int brc = Int32.Parse(rc);
             conn.Close();
             return brc;
-
         }
+
         public int GetstarCountDAL(string ISBN)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");

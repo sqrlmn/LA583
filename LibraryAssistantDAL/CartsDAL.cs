@@ -18,6 +18,7 @@ namespace LibraryAssistantDAL
             da.Fill(ds);
             return ds;
         }
+
         public bool CreateCartsbyUsername(string username, string ISBN, int ID)
         {
             
@@ -38,6 +39,7 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
+
         public int GetMaxIDDAL()
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
@@ -52,8 +54,8 @@ namespace LibraryAssistantDAL
             int updateid = Int32.Parse(id);
             updateid += 1;
             return updateid;
-
         }
+
         public bool RemoveCartsbyUsername(string username)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
@@ -71,6 +73,7 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
+
         public bool RemoveCartsbyISBN(string username, string ISBN)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
@@ -89,9 +92,9 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
+
         public bool cartisEmpty()
         {
-
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
             MySqlCommand cmd = new MySqlCommand("select count(*) from carts " , conn);
             conn.Open();
@@ -106,12 +109,10 @@ namespace LibraryAssistantDAL
                 return false;
             }
         }
+
         public DataSet getCartsinfobyusername(string username)
         {
-
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            //MySqlDataAdapter da = new MySqlDataAdapter("SELECT c.bookISBN, b.title, b.author, b.subject FROM carts as c INNER JOIN books as b ON c.bookISBN = b.ISBN INNER JOIN accounts as a ON c.accountsUsername = a.username where c.accountsUsername='%"+username+"'", conn);
-
             MySqlCommand cmd = new MySqlCommand("SELECT c.bookISBN, b.title, b.author, b.subject FROM carts as c INNER JOIN books as b ON c.bookISBN = b.ISBN INNER JOIN accounts as a ON c.accountsUsername = a.username where c.accountsUsername=@username;", conn);
             cmd.Parameters.Add(new MySqlParameter("@username", username));
             MySqlDataAdapter da = new MySqlDataAdapter();
@@ -119,8 +120,6 @@ namespace LibraryAssistantDAL
             DataSet ds = new DataSet("carts");
             da.Fill(ds);
             return ds;
-
-
         }
     }
 }
