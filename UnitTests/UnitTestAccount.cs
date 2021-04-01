@@ -249,6 +249,7 @@ namespace UnitTests
         [TestMethod]
         public void TestCreateNewAccountIsNotNull()
         {
+            // This test is used to check valid input when creating new account
             AccountBL accountBl = new AccountBL();
             var result = accountBl.NullCheckForCreateNewAccountInputBL("a", "a", "0", "Mingyi", "Liang", "mingyi.liang@wsu.edu", "12110 SE 70th St, Newcastle, WA 98056", "(425) 327-5432");
             Assert.IsTrue(result);
@@ -257,6 +258,7 @@ namespace UnitTests
         [TestMethod]
         public void TestPasswordIsEncrypted()
         {
+            // This test is used to check whether password is encrypted
             SHA512 sha512 = SHA512Managed.Create();
             byte[] bytes = Encoding.UTF8.GetBytes("testing");
             byte[] hash = sha512.ComputeHash(bytes);
