@@ -257,3 +257,4 @@ C:\Users\vietn\source\repos\LA583-chris\LibraryAssistant\bin\Debug\LibraryAssist
 C:\Users\vietn\source\repos\LA583-chris\LibraryAssistant\bin\Debug\LibraryAssistantDAL.dll.config
 C:\Users\vietn\source\repos\LA583-chris\LibraryAssistant\obj\Debug\LibraryAssistant.csproj.CopyComplete
 C:\Users\nghia.luong\source\repos\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.frmAddNewBook.resources
+C:\Users\nghia.luong\source\repos\LA583\LibraryAssistant\obj\Debug\LibraryAssistant.frmIssue.resources

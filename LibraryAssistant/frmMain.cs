@@ -69,7 +69,7 @@ namespace LibraryAssistant
                 lblAccountType.Text = "Librarian";
                 lblBookReturn.Show();
                 lblViewCart.Hide();
-                lblCheckout.Hide();
+                lblCheckout.Text = "Issue";
             }
             else
             {
@@ -140,21 +140,34 @@ namespace LibraryAssistant
 
         private void checkout_Click(object sender, EventArgs e)
         {
-            CartsBL carts = new CartsBL();
-            if (carts.removeCartsbyusername(username))
+            if (type)
             {
-                MessageBox.Show("You are already checkout...", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmIssue fIssue = new frmIssue();
+                fIssue.ShowDialog();
             }
             else
             {
-                MessageBox.Show("There is an error...", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CartsBL carts = new CartsBL();
+                BorrowsBL borrowsBl = new BorrowsBL();
+                for (int i = 0; i < carts.GetUsersBookCartsBL(username).Tables[0].Rows.Count; i++)
+                {
+                    borrowsBl.CreateBorrowsBL(username, carts.GetUsersBookCartsBL(username).Tables[0].Rows[i][0].ToString());
+                }
+                if (carts.removeCartsbyusername(username))
+                {
+                    MessageBox.Show("You are already checkout...", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("There is an error...", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                AlertBL newReturnAlert = new AlertBL();
+                DateTime today = DateTime.Today;
+                DateTime expiryDate = today.AddDays(15);
+                Random rnd_id = new Random();
+                int alert_id = rnd_id.Next(1, 1000);
+                newReturnAlert.SetAlertReturnBL(username, alert_id, expiryDate);
             }
-            AlertBL newReturnAlert = new AlertBL();
-            DateTime today = DateTime.Today;
-            DateTime expiryDate = today.AddDays(15);
-            Random rnd_id = new Random();
-            int alert_id = rnd_id.Next(1, 1000);
-            newReturnAlert.SetAlertReturnBL(username, alert_id, expiryDate);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

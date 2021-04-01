@@ -12,22 +12,25 @@ namespace LibraryAssistantDAL
     {
         public bool GetAlertUserReturnDAL(string username)
         {
-
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;Convert Zero Datetime=True;");
             MySqlCommand cmd = new MySqlCommand("SELECT returnTime FROM alerts WHERE returnTime=@date and username=@username", conn); // getting the return date of books that the user has checked out
             DateTime date = DateTime.Today; // todays date
-            cmd.Parameters.Add(new MySqlParameter("@date", date)); 
+            cmd.Parameters.Add(new MySqlParameter("@date", date));
             cmd.Parameters.Add(new MySqlParameter("@username", username));
             conn.Open();
             try
             {
-                DateTime sql_date = (DateTime)cmd.ExecuteScalar(); // getting the date from the database if possible
-                if (date == sql_date)
+                if (cmd.ExecuteReaderAsync() != null)
                 {
-                    conn.Close();
-                    return true;
+                    DateTime sql_date = (DateTime)cmd.ExecuteScalar(); // getting the date from the database if possible
+                    if (date == sql_date)
+                    {
+                        conn.Close();
+                        return true;
+                    }
+                    return false; // if the date does not match todays date it returns false
                 }
-                return false; // if the date does not match todays date it returns false
+                return false;
             }
             catch
             {

@@ -19,6 +19,15 @@ namespace LibraryAssistantDAL
             return ds;
         }
 
+        public DataSet GetUsersBookCartsDAL(string username)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT bookISBN from carts where accountsUsername = '" + username + "'", conn);
+            DataSet ds = new DataSet("BooksInCart");
+            da.Fill(ds);
+            return ds;
+        }
+
         public bool CreateCartsbyUsername(string username, string ISBN, int ID)
         {
             
