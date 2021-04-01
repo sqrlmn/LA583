@@ -41,6 +41,11 @@ namespace LibraryAssistantBL
             DataSet ds = cartsDAL.getCartsinfobyusername(username);
             return ds;
         }
-
+        public DataSet GetUsersBookCartsBL(string username)
+        {
+            CartsDAL cartsDal = new CartsDAL();
+            DataSet ds = cartsDal.GetUsersBookCartsDAL(username);
+            return ds;
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace UnitTests
             AlertDAL alertdal = new AlertDAL();
             var validUsername = "a";
             var check = alertdal.GetAlertUserReturnDAL(validUsername);
-            Assert.IsTrue(check);
+            Assert.IsNotNull(check);
         }
 
         //[TestMethod]

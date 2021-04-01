@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace LibraryAssistantDAL
 {
     public class BorrowsDAL
     {
+        // Data: status = 0 have not issued yet; status = 1 issued; status = 2 returned
         public int GetMaxIDDAL()
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
@@ -27,9 +29,8 @@ namespace LibraryAssistantDAL
 
         public bool CreateBorrowByUsername(int id, string username, string ISBN)
         {
-
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO borrows (borrowId, bUsername, bISBN, issueDate) VALUES(@ID, @username, @ISBN, (SELECT CURDATE()))", conn);
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO borrows (borrowId, bUsername, bISBN, issueDate, status) VALUES(@ID, @username, @ISBN, (SELECT CURDATE()), 0)", conn);
             cmd.Parameters.Add(new MySqlParameter("@ID", id));
             cmd.Parameters.Add(new MySqlParameter("@username", username));
             cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
@@ -44,6 +45,33 @@ namespace LibraryAssistantDAL
             {
                 return false;
             }
+        }
+
+        public bool ChangeBorrowStatusByUsername(string username)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("UPDATE borrows SET status = 1 WHERE bUsername = @username", conn);
+            cmd.Parameters.Add(new MySqlParameter("@username", username));
+            conn.Open();
+            int rowAffected = cmd.ExecuteNonQuery();
+            conn.Close();
+            if (rowAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public DataSet GetBorrowsDAL()
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT DISTINCT bUsername as User, COUNT(bUsername) AS 'Number of Books' FROM borrows WHERE status = 0 GROUP BY bUsername", conn);
+            DataSet ds = new DataSet("Borrows");
+            da.Fill(ds);
+            return ds;
         }
     }
 }

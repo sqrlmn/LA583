@@ -149,6 +149,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIssue.Designer.cs">
+      <DependentUpon>frmIssue.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddNewBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmIssue.resx">
+      <DependentUpon>frmIssue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddNewBook.resx">
       <DependentUpon>frmAddNewBook.cs</DependentUpon>
     </EmbeddedResource>
