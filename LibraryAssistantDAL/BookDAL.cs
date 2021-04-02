@@ -168,5 +168,43 @@ namespace LibraryAssistantDAL
             conn.Close();
             return bsc;
         }
+
+        public bool DecreaseAvailableDAL(string ISBN, int available)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("UPDATE books SET available = @available WHERE ISBN = @ISBN", conn);
+            cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
+            cmd.Parameters.Add(new MySqlParameter("@available", available - 1));
+            conn.Open();
+            int rowAffected = cmd.ExecuteNonQuery();
+            conn.Close();
+            if (rowAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool IncreaseAvailableDAL(string ISBN, int available)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("UPDATE books SET available = @available WHERE ISBN = @ISBN", conn);
+            cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
+            cmd.Parameters.Add(new MySqlParameter("@available", available + 1));
+            conn.Open();
+            int rowAffected = cmd.ExecuteNonQuery();
+            conn.Close();
+            if (rowAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

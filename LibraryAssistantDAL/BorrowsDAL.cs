@@ -47,7 +47,7 @@ namespace LibraryAssistantDAL
             }
         }
 
-        public bool ChangeBorrowStatusByUsername(string username)
+        public bool ChangeBorrowStatusByUsernameDAL(string username)
         {
             MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
             MySqlCommand cmd = new MySqlCommand("UPDATE borrows SET status = 1 WHERE bUsername = @username", conn);
@@ -63,6 +63,26 @@ namespace LibraryAssistantDAL
             {
                 return false;
             }
+        }
+
+        public int GetBookAvailableByISBNDAL(string ISBN)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlCommand cmd = new MySqlCommand("SELECT available FROM books WHERE ISBN = @ISBN", conn);
+            cmd.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
+            conn.Open();
+            int avalble = (int)cmd.ExecuteScalar();
+            conn.Close();
+            return avalble;
+        }
+
+        public DataSet GetBorrowsISBNByUsernameDAL(string username)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=libraryassistant.cwhg663yxudq.us-west-2.rds.amazonaws.com;Database=library;Uid=la583;Pwd=la583password;");
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT bISBN FROM borrows WHERE bUsername = '" + username + "' AND Status = 0", conn);
+            DataSet ds = new DataSet("username");
+            da.Fill(ds);
+            return ds;
         }
 
         public DataSet GetBorrowsDAL()

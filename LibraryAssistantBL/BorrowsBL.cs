@@ -53,8 +53,8 @@ namespace LibraryAssistantBL
             if (NullCheckUsernameInputBL(username))
             {
                 BorrowsDAL borrowDal = new BorrowsDAL();
-                bool removed = borrowDal.ChangeBorrowStatusByUsername(username);
-                return removed;
+                bool result = borrowDal.ChangeBorrowStatusByUsernameDAL(username);
+                return result;
             }
             else
             {
@@ -67,7 +67,7 @@ namespace LibraryAssistantBL
             if (NullCheckUsernameInputBL(username))
             {
                 BorrowsDAL borrowDal = new BorrowsDAL();
-                bool result = borrowDal.ChangeBorrowStatusByUsername(username);
+                bool result = borrowDal.ChangeBorrowStatusByUsernameDAL(username);
                 return result;
             }
             else
@@ -81,6 +81,20 @@ namespace LibraryAssistantBL
             BorrowsDAL borrowDal = new BorrowsDAL();
             DataSet ds = borrowDal.GetBorrowsDAL();
             return ds;
+        }
+
+        public int GetBookAvailableByISBNBL(string ISBN)
+        {
+            BorrowsDAL borrowDal = new BorrowsDAL();
+            int result = borrowDal.GetBookAvailableByISBNDAL(ISBN);
+            return result;
+        }
+
+        public DataSet GetBorrowsISBNByUsernameBL(string username)
+        {
+            BorrowsDAL borrowDal = new BorrowsDAL();
+            DataSet result = borrowDal.GetBorrowsISBNByUsernameDAL(username);
+            return result;
         }
     }
 }

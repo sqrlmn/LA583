@@ -51,11 +51,25 @@ namespace LibraryAssistantBL
             bool ds = bookDal.EditBookDAL(ISBN, title, author, quantity, price, subject, pageCount, available, currentISBN);
             return ds;
         }
+
         public void UpdatebookRateBL(string ISBN, int starcount)
         {
             BookDAL bookDal = new BookDAL();
             bookDal.updateBookreviewDAL(ISBN, starcount);
+        }
 
+        public bool DecreaseAvailableBL(string ISBN, int available)
+        {
+            BookDAL bookDal = new BookDAL();
+            bool ds = bookDal.DecreaseAvailableDAL(ISBN, available);
+            return ds;
+        }
+
+        public bool IncreaseAvailableBL(string ISBN, int available)
+        {
+            BookDAL bookDal = new BookDAL();
+            bool ds = bookDal.IncreaseAvailableDAL(ISBN, available);
+            return ds;
         }
     }
 }

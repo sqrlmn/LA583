@@ -38,8 +38,10 @@ namespace LibraryAssistant
         private void btnConfirmReturn_Click(object sender, EventArgs e)
         {
             BookBL bookBL = new BookBL();
+            BorrowsBL borrowsBl = new BorrowsBL();
             if (bookBL.ReturnBookBL(username, isbn) == true)
             {
+                bookBL.IncreaseAvailableBL(isbn, Convert.ToInt32(borrowsBl.GetBookAvailableByISBNBL(isbn)));
                 MessageBox.Show("Book return successful!");
             }
             else
