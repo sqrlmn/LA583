@@ -20,14 +20,32 @@ namespace UnitTests
             Assert.IsNotNull(check);
         }
 
-        //[TestMethod]
-        //public void TestGetBookAvailable()
-        //{
-        //    AlertDAL alertdal = new AlertDAL();
-        //    var validUsername = "a";
-        //    var check = alertdal.GetBookAvailableDAL(validUsername);
-        //    Assert.IsFalse(check);
-        //}
+        [TestMethod]
+        public void TestgetUserBookReturnAlertFalse()
+        {
+            AlertDAL alertdal = new AlertDAL();
+            var validUsername = "a";
+            var check = alertdal.GetAlertUserReturnDAL(validUsername);
+            Assert.IsFalse(check);
+        }
+
+        [TestMethod]
+        public void TestGetBookAvailable()
+        {
+            AlertDAL alertdal = new AlertDAL();
+            var validUsername = "a";
+            var check = alertdal.GetBookAvailableDAL(validUsername);
+            Assert.IsNotNull(check);
+        }
+
+        [TestMethod]
+        public void TestGetBookAvailableTrue()
+        {
+            AlertDAL alertdal = new AlertDAL();
+            var validUsername = "a";
+            var check = alertdal.GetBookAvailableDAL(validUsername);
+            Assert.IsTrue(check);
+        }
 
         [TestMethod]
         public void TestSetAlertReturn()
@@ -38,19 +56,32 @@ namespace UnitTests
             var num = random.Next(1000);
             var validUsername = "a";
             var check = alertdal.SetAlertReturnDAL(validUsername, num, today);
-            Assert.IsFalse(check);
+            Assert.IsNotNull(check);
         }
 
-        //[TestMethod]
-        //public void TestSetBookAlertAvailable()
-        //{
-        //    AlertDAL alertdal = new AlertDAL();
-        //    Random random = new Random();
-        //    DateTime today = DateTime.Today;
-        //    var num = random.Next(1000);
-        //    var validUsername = "a";
-        //    var check = alertdal.SetAlertBookAvailableDAL(validUsername, 0, num, "A Daughter of the Snows");
-        //    Assert.IsTrue(check);
-        //}
+
+        [TestMethod]
+        public void TestSetBookAlertAvailable()
+        {
+            AlertDAL alertdal = new AlertDAL();
+            Random random = new Random();
+            DateTime today = DateTime.Today;
+            var num = random.Next(1000);
+            var validUsername = "a";
+            var check = alertdal.SetAlertBookAvailableDAL(validUsername, 0, num, "A Daughter of the Snows");
+            Assert.IsNotNull(check);
+        }
+
+        [TestMethod]
+        public void TestSetBookAlertAvailableTrue()
+        {
+            AlertDAL alertdal = new AlertDAL();
+            Random random = new Random();
+            DateTime today = DateTime.Today;
+            var num = random.Next(1000);
+            var validUsername = "a";
+            var check = alertdal.SetAlertBookAvailableDAL(validUsername, 0, num, "A Daughter of the Snows");
+            Assert.IsTrue(check);
+        }
     }
 }
