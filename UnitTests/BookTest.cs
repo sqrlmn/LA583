@@ -26,7 +26,7 @@ namespace UnitTests
             Random rnd_id = new Random();
             int alert_id = rnd_id.Next(1, 1000);
             returntest.CreateBorrowByUsername(alert_id, "a", "1");
-            returntest.ChangeBorrowStatusByUsername("a");
+            returntest.ChangeBorrowStatusByUsernameDAL("a");
             BookDAL testbook = new BookDAL();
             var isbn = "1";
             var username = "a";
