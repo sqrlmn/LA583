@@ -81,20 +81,20 @@ namespace LibraryAssistantBL
             BorrowsDAL borrowDal = new BorrowsDAL();
             DataSet ds = borrowDal.GetBorrowsDAL();
             return ds;
-        }
+        }//output
 
         public int GetBookAvailableByISBNBL(string ISBN)
         {
             BorrowsDAL borrowDal = new BorrowsDAL();
             int result = borrowDal.GetBookAvailableByISBNDAL(ISBN);
             return result;
-        }
+        }//output
 
         public DataSet GetBorrowsISBNByUsernameBL(string username)
         {
             BorrowsDAL borrowDal = new BorrowsDAL();
             DataSet result = borrowDal.GetBorrowsISBNByUsernameDAL(username);
             return result;
-        }
+        }//output
     }
 }

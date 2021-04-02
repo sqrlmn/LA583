@@ -129,7 +129,7 @@ namespace LibraryAssistantDAL
             }
         }
 
-        public void updateBookreviewDAL(string ISBN, int starcount)
+        public bool updateBookreviewDAL(string ISBN, int starcount)
         {
             int rc = GetReviewCountDAL(ISBN);
             int sc = GetstarCountDAL(ISBN);
@@ -141,8 +141,16 @@ namespace LibraryAssistantDAL
             cmd3.Parameters.Add(new MySqlParameter("@ISBN", ISBN));
 
             conn.Open();
-            cmd3.ExecuteNonQuery();
+            int rowAffected = cmd3.ExecuteNonQuery();
             conn.Close();
+            if (rowAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public int GetReviewCountDAL(string ISBN)
