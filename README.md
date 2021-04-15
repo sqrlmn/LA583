@@ -5,3 +5,4 @@ Repo: https://github.com/sqrlmn/LA583
 ### Namgyu Han namgyu.han@wsu.edu 11647029
 ### Travis Cripe travis.cripe@wsu.edu 11519554
 ### Chris Minh Nguyen chris.m.nguyen@wsu.edu 11595663
+## Download "LibrarianAssistant.zip", then extract it and run "setup.exe" to install and run our software.
